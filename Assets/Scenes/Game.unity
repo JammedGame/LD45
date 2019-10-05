@@ -154,39 +154,19 @@ MonoBehaviour:
     Rooms:
     - X: 0
       Y: 0
-      StuffInRoom:
-      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-        Position:
-          x: 3
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-        Position:
-          x: 3
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-        Position:
-          x: 3
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-        Position:
-          x: 3
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-        Position:
-          x: 3
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
-        Position:
-          x: -5
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
-        Position:
-          x: 5
-          y: -3
-      - ObjectType: {fileID: 11400000, guid: 0e41030280ea0434f871fc52a4ab8205, type: 2}
-        Position:
-          x: 7
-          y: 3
+      RoomPreset: {fileID: 11400000, guid: 237b62ab6844964429d9aa21821b92bf, type: 2}
+    - X: 1
+      Y: 0
+      RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
+    - X: 1
+      Y: 1
+      RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
+    - X: 1
+      Y: 2
+      RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
+    - X: 1
+      Y: 3
+      RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
 --- !u!4 &170815725
 Transform:
   m_ObjectHideFlags: 0
@@ -212,6 +192,7 @@ GameObject:
   - component: {fileID: 1982803670}
   - component: {fileID: 1982803669}
   - component: {fileID: 1982803668}
+  - component: {fileID: 1982803671}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -284,3 +265,106 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982803671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982803667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_CameraOutput: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!4 &3442001613734402484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873508876692619057}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.6675856, y: 2.5480716, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3873508876692619057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3442001613734402484}
+  - component: {fileID: 8250973508261921470}
+  m_Layer: 0
+  m_Name: Global Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &8250973508261921470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873508876692619057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.3
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}

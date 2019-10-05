@@ -20,11 +20,11 @@ public class Room
 		var gameSettings = GameSettings.Instance;
 		Width = gameSettings.RoomWidth;
 		Height = gameSettings.RoomHeight;
-		Position3D.x = data.X * (Width + gameSettings.RoomPadding);
-		Position3D.y = data.Y * (Height + gameSettings.RoomPadding);
+		Position3D.x = data.X * (Width + gameSettings.RoomWidthPadding);
+		Position3D.y = data.Y * (Height + gameSettings.RoomHeightPadding);
 
 		// spawn objects
-		data.StuffInRoom.ForEach(x => x.ObjectType.SpawnIntoRoom(this, x.Position));
+		data.RoomPreset.StuffInRoom.ForEach(x => x.ObjectType.SpawnIntoRoom(this, x.Position));
 	}
 
 	public void OnObjectAdded(BattleObject battleObject)
