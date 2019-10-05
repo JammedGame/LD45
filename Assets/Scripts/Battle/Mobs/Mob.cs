@@ -62,7 +62,7 @@ public class Mob : Unit
 	public override void OnCollisionWith(BattleObject obj)
 	{
 		base.OnCollisionWith(obj);
-		if (obj is Mob)
+		if (obj is Mob || obj is Prop)
 		{
 			PatrolTarget = Position;
 		}
