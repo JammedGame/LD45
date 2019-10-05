@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7975e9a540763da418f8cdbb3db7401c, type: 3}
   m_Name: Pot
   m_EditorClassIdentifier: 
-  ColliderType: 2
+  ColliderType: 1
   Size:
     x: 0.5
-    y: 0.4
+    y: 0.35
   IsStatic: 1
   Density: 1
   Health: 1

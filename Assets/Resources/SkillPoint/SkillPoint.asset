@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColliderType: 1
   Size:
-    x: 0.5
-    y: 0.5
-  IsStatic: 0
+    x: 0.2
+    y: 0.2
+  IsStatic: 1
   Density: 1
   Health: 1
-  IsVulnerable: 0
-  spawnOnDeath: {fileID: 0}

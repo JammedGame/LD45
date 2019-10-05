@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38074008, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -164,6 +164,12 @@ MonoBehaviour:
       LoreInRoom: {fileID: 0}
     - RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
       LoreInRoom: {fileID: 0}
+    - RoomPreset: {fileID: 11400000, guid: 237b62ab6844964429d9aa21821b92bf, type: 2}
+      LoreInRoom: {fileID: 0}
+    - RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
+      LoreInRoom: {fileID: 0}
+    - RoomPreset: {fileID: 11400000, guid: 62f55931e1c6e9c4dabc7d6f348fc432, type: 2}
+      LoreInRoom: {fileID: 0}
 --- !u!4 &170815725
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +221,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

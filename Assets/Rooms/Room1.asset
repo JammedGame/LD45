@@ -28,16 +28,16 @@ MonoBehaviour:
       y: -2
   - ObjectType: {fileID: 11400000, guid: 7f3f54e7c626352429273bc85df32721, type: 2}
     Position:
-      x: -3
-      y: -2
-  - ObjectType: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
-    Position:
-      x: -3
+      x: 6
       y: 3
   - ObjectType: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
     Position:
+      x: -3
+      y: 2.8
+  - ObjectType: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
+    Position:
       x: 3
-      y: -3
+      y: -2.8
   - ObjectType: {fileID: 11400000, guid: 0e41030280ea0434f871fc52a4ab8205, type: 2}
     Position:
       x: -5

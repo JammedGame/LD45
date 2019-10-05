@@ -145,6 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a41cda08297eb45ba4bb54b2e195c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathAnimationDuration: 0
+  DeathAnimationDuration: 0.5
   OnDeathEffect: {fileID: 0}
   OnDeathEffectDuration: 0
