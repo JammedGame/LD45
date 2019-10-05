@@ -11,6 +11,13 @@ public class MobSettings : BattleObjectSettings
 	[Header("Health")]
 	public float Health;
 
+	[Header("Attack Stuff")]
+	public float AttackRange;
+	public float AttackDuration;
+	public float AttackDamage;
+	public float AttackPush;
+	public ProjectileSettings Projectile;
+
 	[Header("Patrolling Stuff")]
 	public float PatrollingDistance;
 	public float PatrollingPause;
