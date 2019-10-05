@@ -6,6 +6,8 @@ public class GameBooter : MonoBehaviour
 {
     public GameWorldData LevelData;
 
+    
+
     void Awake()
     {
         Application.targetFrameRate = 60;
