@@ -42,7 +42,7 @@ public class Player : Unit
 			var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			var mousePos = new float2(mousePos3D.x, mousePos3D.y);
 			FireProjectile(mousePos, PlayerSettings.Weapon1);
-			CurrentAnimation = AnimationType.Attack;
+			CurrentAnimation = AnimationType.Attack;			
 		}
 	}
 }
