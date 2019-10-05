@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using static Unity.Mathematics.math;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -47,7 +48,7 @@ public class Chest : BattleObject
 
 			if (ChestSettings.PossibleDrops.Count == 1)
 			{
-				SpawnDrops(ChestSettings.PossibleDrops[0].ItemPool);
+				SpawnDrops(ChestSettings.PossibleDrops[0].ItemPool, player);
 			}
 			else if (ChestSettings.PossibleDrops.Count > 1)
 			{
@@ -57,20 +58,21 @@ public class Chest : BattleObject
 						bag.Add(drop);
 
 				var randomlySelected = UnityEngine.Random.Range(0, bag.Count);
-				SpawnDrops(bag[randomlySelected].ItemPool);
+				SpawnDrops(bag[randomlySelected].ItemPool, player);
 			}
 
 		}
 	}
 
-	public void SpawnDrops(List<DropTableRow> ItemPool)
+	public void SpawnDrops(List<DropTableRow> ItemPool, BattleObject collector)
 	{
 		foreach(var stuff in ItemPool)
 		{
 			var proc = Room.World.RandomGenerator.NextFloat();
 			if (proc <= stuff.Proc)
 			{
-				stuff.Type.SpawnIntoRoom(Room, Position + Size * RandomDirection);
+				var dir = (RandomDirection + normalizesafe(Position - collector.Position)) / 2f;
+				stuff.Type.SpawnIntoRoom(Room, Position + Size * dir);
 			}
 		}
 	}
