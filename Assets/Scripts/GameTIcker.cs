@@ -8,6 +8,7 @@ public class GameTicker : MonoBehaviour
 	public Room3DController RoomController;
 	public BattleViewController ViewController;
 
+
 	/// <summary>
 	/// Creates a new game world and start ticking.
 	/// </summary>
