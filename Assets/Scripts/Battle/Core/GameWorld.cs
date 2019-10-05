@@ -20,7 +20,19 @@ public class GameWorld
         ViewEventPipe = new ViewEventsPipe();
 
         // init rooms
-        Rooms = gameWorldData.Rooms.ConvertAll(roomData => new Room(this, roomData));
+        int x = 0, y = 0;
+        Rooms = new List<Room>();
+        foreach(var data in gameWorldData.Rooms)
+        {
+            Rooms.Add(new Room(this, x, y, data.RoomPreset));
+
+            // move up or right
+            var proc = UnityEngine.Random.Range(0, 100) > 50;
+            if (proc)
+                x++;
+            else
+                y++;
+        }
 
         // set next room refs
         for(int i = 0; i < Rooms.Count - 1; i++)

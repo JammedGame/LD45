@@ -11,7 +11,6 @@ public class GameWorldData
 [Serializable]
 public class RoomData
 {
-	public int X;
-	public int Y;
 	public RoomPreset RoomPreset;
+	public LoreStoneSettings LoreInRoom;
 }
