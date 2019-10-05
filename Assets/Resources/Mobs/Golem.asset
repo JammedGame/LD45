@@ -18,5 +18,7 @@ MonoBehaviour:
     y: 0.4
   IsStatic: 0
   Density: 1
-  MovementSpeed: 5
-  AggroRange: 3
+  MovementSpeed: 7
+  AggroRange: 4
+  PatrollingDistance: 1.5
+  PatrollingPause: 1.5

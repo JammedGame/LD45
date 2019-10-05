@@ -10,11 +10,13 @@ public class GameWorld
     public readonly List<Room> Rooms;
     public readonly Player Player;
 	public readonly ViewEventsPipe ViewEventPipe;
+    public Unity.Mathematics.Random RandomGenerator;
 
     public GameWorld(GameWorldData gameWorldData)
     {
         // init basic stuff
         GameWorldData = gameWorldData;
+        RandomGenerator = new Unity.Mathematics.Random((uint)GetHashCode());
         ViewEventPipe = new ViewEventsPipe();
 
         // init rooms
@@ -34,4 +36,6 @@ public class GameWorld
         // tick only the room that player is on.
         Player.Room.Tick(dT);
 	}
+
+    public float2 RandomDirection => RandomGenerator.NextFloat2Direction();
 }

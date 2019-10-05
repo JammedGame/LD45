@@ -8,6 +8,10 @@ public class MobSettings : BattleObjectSettings
 	public float MovementSpeed;
 	public float AggroRange;
 
+	[Header("Patrolling Stuff")]
+	public float PatrollingDistance;
+	public float PatrollingPause;
+
 	public override string VisualsPath => "Mobs/Visuals/" + name;
 
 	public override BattleObject SpawnIntoRoom(Room room, float2 position)
