@@ -6,9 +6,10 @@ using UnityEngine;
 public class Room
 {
 	public readonly GameWorld World;
-	public readonly RoomData RoomData;
+	public readonly RoomPreset RoomData;
 	public Room NextRoom { get; private set; }
 	public Room RoomBefore { get; private set; }
+	public readonly int X, Y;
 	public readonly float2 Position;
 	public readonly Vector3 Position3D;
 	public readonly float Width, Height;
@@ -17,20 +18,22 @@ public class Room
 	public float2 DoorPosition;
 	public float2 EntryPosition;
 
-	public Room(GameWorld gameWorld, RoomData data)
+	public Room(GameWorld gameWorld, int x, int y, RoomPreset data)
 	{
 		RoomData = data;
 		World = gameWorld;
+		X = x;
+		Y = y;
 
 		// position room
 		var gameSettings = GameSettings.Instance;
 		Width = gameSettings.RoomWidth;
 		Height = gameSettings.RoomHeight;
-		Position3D.x = data.X * (Width + gameSettings.RoomWidthPadding);
-		Position3D.y = data.Y * (Height + gameSettings.RoomHeightPadding);
+		Position3D.x = X * (Width + gameSettings.RoomWidthPadding);
+		Position3D.y = Y * (Height + gameSettings.RoomHeightPadding);
 
 		// spawn objects
-		data.RoomPreset.StuffInRoom.ForEach(x => x.ObjectType.SpawnIntoRoom(this, x.Position));
+		data.StuffInRoom.ForEach(s => s.ObjectType.SpawnIntoRoom(this, s.Position));
 	}
 
 	public void SetNextRoom(Room nextRoom)
@@ -39,11 +42,11 @@ public class Room
 
 		NextRoom = nextRoom;
 
-		if (NextRoom.RoomData.X == RoomData.X + 1)
+		if (NextRoom.X == X + 1)
 		{
 			DoorPosition = new float2(GameSettings.Instance.RoomWidth / 2f, 0f);
 		}
-		else if (NextRoom.RoomData.Y == RoomData.Y + 1)
+		else if (NextRoom.Y == Y + 1)
 		{
 			DoorPosition = new float2(0f, GameSettings.Instance.RoomHeight / 2f);
 		}
@@ -55,11 +58,11 @@ public class Room
 
 		RoomBefore = roomBefore;
 
-		if (RoomBefore.RoomData.X == RoomData.X - 1)
+		if (RoomBefore.X == X - 1)
 		{
 			EntryPosition = new float2(-GameSettings.Instance.RoomWidth / 2f, 0f);
 		}
-		else if (RoomBefore.RoomData.Y == RoomData.Y - 1)
+		else if (RoomBefore.Y == Y - 1)
 		{
 			EntryPosition = new float2(0f, -GameSettings.Instance.RoomHeight / 2f);
 		}
