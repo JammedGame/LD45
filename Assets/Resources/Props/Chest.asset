@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7975e9a540763da418f8cdbb3db7401c, type: 3}
-  m_Name: Blocky2
+  m_Name: Chest
   m_EditorClassIdentifier: 
   ColliderType: 2
   Size:
     x: 0.5
-    y: 0.5
-  IsStatic: 0
-  Density: 5
+    y: 0.4
+  IsStatic: 1
+  Density: 1
