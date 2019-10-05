@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   RoomWidth: 18
-  RoomHeight: 8
+  RoomHeight: 7.75
   RoomPadding: 0
