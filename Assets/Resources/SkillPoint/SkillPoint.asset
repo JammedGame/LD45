@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7975e9a540763da418f8cdbb3db7401c, type: 3}
+  m_Script: {fileID: 11500000, guid: 02715fbb65325f24cb47543f9be8d0e9, type: 3}
   m_Name: SkillPoint
   m_EditorClassIdentifier: 
-  ColliderType: 2
+  ColliderType: 1
   Size:
-    x: 0.5
-    y: 0.4
-  IsStatic: 1
+    x: 0.01
+    y: 0.01
+  IsStatic: 0
   Density: 1
+  Health: 1
+  IsVulnerable: 0
+  spawnOnDeath: {fileID: 0}
