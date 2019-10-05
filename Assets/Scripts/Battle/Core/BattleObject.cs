@@ -60,7 +60,12 @@ public abstract class BattleObject
 	/// <summary>
 	/// Parent level of my room.
 	/// </summary>
-	public GameWorld Level => room?.World;
+	public GameWorld Level => room.World;
+
+	/// <summary>
+	/// Player.
+	/// </summary>
+	public Player Player => room.World.Player;
 
 	/// <summary>
 	/// Room that this object currently belongs.
@@ -70,7 +75,7 @@ public abstract class BattleObject
 		get { return room; }
 		set
 		{
-			if (room != value)
+			if (room != value && value != null)
 			{
 				room?.OnObjectLeft(this);
 				room = value;
