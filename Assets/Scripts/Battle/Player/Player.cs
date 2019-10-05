@@ -40,7 +40,7 @@ public class Player : Unit
 
 		// dummy bullet
 		attackProgress -= dT;
-		if (Input.GetKey(KeyCode.LeftControl))
+		if (Input.GetKey(KeyCode.Mouse0))
 		{
 			CurrentAnimation = AnimationType.Attack;			
 			if (attackProgress <= 0f)
