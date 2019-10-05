@@ -10,7 +10,6 @@ public class GameTicker : MonoBehaviour
 	public BattleViewController ViewController;
 	public Camera Camera;
 
-
 	/// <summary>
 	/// Creates a new game world and start ticking.
 	/// </summary>
@@ -22,6 +21,7 @@ public class GameTicker : MonoBehaviour
 		newTicker.GameWorld = gameWorld;
 		newTicker.ViewController = new BattleViewController();
 		newTicker.RoomController = new Room3DController(gameWorld);
+		Game.ActiveGame = newTicker;
 		return newTicker;
 	}
 

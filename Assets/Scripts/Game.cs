@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public static class Game
 {
+	public static GameTicker ActiveGame;
+	public static Player Player => ActiveGame?.GameWorld.Player;
 	public static readonly SettingsCache<PlayerSettings> PlayerSettings = new SettingsCache<PlayerSettings>("Player/PlayerSettings");
 
 	[ExecutableCommand]
