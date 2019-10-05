@@ -7,6 +7,8 @@ public class Player : Unit
 	public readonly PlayerSettings PlayerSettings;
 	public AnimationType CurrentAnimation;
 
+	public float attackProgress;
+
 	public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
 	{
 		PlayerSettings = settings;
@@ -37,12 +39,17 @@ public class Player : Unit
 		}
 
 		// dummy bullet
-		if (Input.GetKeyDown(KeyCode.LeftControl))
+		attackProgress -= dT;
+		if (Input.GetKey(KeyCode.LeftControl))
 		{
-			var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			var mousePos = new float2(mousePos3D.x, mousePos3D.y);
-			FireProjectile(mousePos, PlayerSettings.Damage, PlayerSettings.Weapon1);
 			CurrentAnimation = AnimationType.Attack;			
+			if (attackProgress <= 0f)
+			{
+				var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				var mousePos = new float2(mousePos3D.x, mousePos3D.y);
+				FireProjectile(mousePos, PlayerSettings.Damage, PlayerSettings.Weapon1);
+				attackProgress = PlayerSettings.FireRateDuration;
+			}
 		}
 	}
 }

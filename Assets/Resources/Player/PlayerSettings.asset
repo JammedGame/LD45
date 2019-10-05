@@ -21,4 +21,7 @@ MonoBehaviour:
   MovementSpeed: 13
   PushAwayRadius: 1.25
   PushAwayForce: 2
+  Health: 10
+  FireRateDuration: 0.5
+  Damage: 1
   Weapon1: {fileID: 11400000, guid: 386f20cea9ab07447b23beeafa87d472, type: 2}
