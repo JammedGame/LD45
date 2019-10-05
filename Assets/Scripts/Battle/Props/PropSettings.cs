@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PropSettings : BattleObjectSettings
 {
-
 	public float Health;
 	public bool IsVulnerable;
 	public BattleObjectSettings spawnOnDeath;

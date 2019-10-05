@@ -16,6 +16,6 @@ MonoBehaviour:
   Size:
     x: 0.2
     y: 0.2
-  IsStatic: 1
+  IsStatic: 0
   Density: 1
   Health: 1

@@ -420,7 +420,7 @@ public readonly struct ColliderProperties
 
 	public ColliderProperties(BattleObject obj)
 	{
-		TriggerOnly = obj is Projectile || obj is SkillPoint;
+		TriggerOnly = obj is Projectile;
 		Shape = obj.Settings.ColliderType;
 		Mass = obj.Settings.Mass;
 		IsStatic = obj.Settings.IsStatic;

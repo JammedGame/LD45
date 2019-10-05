@@ -168,7 +168,7 @@ MonoBehaviour:
       LoreInRoom: {fileID: 0}
     - RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
       LoreInRoom: {fileID: 0}
-    - RoomPreset: {fileID: 11400000, guid: 62f55931e1c6e9c4dabc7d6f348fc432, type: 2}
+    - RoomPreset: {fileID: 11400000, guid: f46b0e089e7af0c4e90247f5c355952c, type: 2}
       LoreInRoom: {fileID: 0}
 --- !u!4 &170815725
 Transform:
