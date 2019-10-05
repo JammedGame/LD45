@@ -45,7 +45,7 @@ public class Room
 		}
 		else if (NextRoom.RoomData.Y == RoomData.Y + 1)
 		{
-			DoorPosition = new float2(0f, -GameSettings.Instance.RoomHeight / 2f);
+			DoorPosition = new float2(0f, GameSettings.Instance.RoomHeight / 2f);
 		}
 	}
 
@@ -61,7 +61,7 @@ public class Room
 		}
 		else if (RoomBefore.RoomData.Y == RoomData.Y - 1)
 		{
-			EntryPosition = new float2(0f, GameSettings.Instance.RoomHeight / 2f);
+			EntryPosition = new float2(0f, -GameSettings.Instance.RoomHeight / 2f);
 		}
 	}	
 
