@@ -11,7 +11,12 @@ public class PlayerSettings : BattleObjectSettings
 	public float PushAwayRadius;
 	public float PushAwayForce;
 
+	[Header("Health")]
+	public float Health;
+
 	[Header("Projectiles")]
+	public float FireRateDuration;
+	public float Damage;
 	public ProjectileSettings Weapon1;
 	public override string VisualsPath => "Player/PlayerVisuals";
 

@@ -7,12 +7,14 @@ using UnityEngine;
 public class Projectile : BattleObject
 {
     public readonly ProjectileSettings ProjectileSettings;
+    public float Damage;
     public float2 Direction;
 
-	public Projectile(Room room, ProjectileSettings projectileSettings, BattleObject shooter, float2 position) : base(room, projectileSettings, shooter, position)
+	public Projectile(Room room, float damage, ProjectileSettings projectileSettings, BattleObject shooter, float2 position) : base(room, projectileSettings, shooter, position)
 	{
         ProjectileSettings = projectileSettings;
         Direction = new float2(1, 0);
+        Damage = damage;
 	}
 
     public void DirectAt(float2 targetPosition)
@@ -33,6 +35,7 @@ public class Projectile : BattleObject
         if (hitObject != Parent)
         {
             hitObject.Push(Direction, ProjectileSettings.PushOnImpact);
+            hitObject.DealDamage(Damage, Parent);
             Deactivate();
         }
     }

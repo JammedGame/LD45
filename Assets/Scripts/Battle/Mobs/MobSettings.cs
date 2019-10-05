@@ -8,6 +8,9 @@ public class MobSettings : BattleObjectSettings
 	public float MovementSpeed;
 	public float AggroRange;
 
+	[Header("Health")]
+	public float Health;
+
 	[Header("Patrolling Stuff")]
 	public float PatrollingDistance;
 	public float PatrollingPause;

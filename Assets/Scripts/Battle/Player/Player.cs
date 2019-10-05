@@ -7,7 +7,7 @@ public class Player : Unit
 	public readonly PlayerSettings PlayerSettings;
 	public AnimationType CurrentAnimation;
 
-	public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings, OwnerId.Player, initialPosition)
+	public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
 	{
 		PlayerSettings = settings;
 	}
@@ -41,7 +41,7 @@ public class Player : Unit
 		{
 			var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			var mousePos = new float2(mousePos3D.x, mousePos3D.y);
-			FireProjectile(mousePos, PlayerSettings.Weapon1);
+			FireProjectile(mousePos, PlayerSettings.Damage, PlayerSettings.Weapon1);
 			CurrentAnimation = AnimationType.Attack;			
 		}
 	}

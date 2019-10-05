@@ -13,6 +13,6 @@ public class ProjectileSettings : BattleObjectSettings
 
 	public override BattleObject SpawnIntoRoom(Room room, float2 position)
 	{
-		return new Projectile(room, this, null, position);
+		return null;
 	}
 }

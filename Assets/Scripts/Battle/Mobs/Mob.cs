@@ -9,7 +9,7 @@ public class Mob : Unit
 	public float2 PatrolTarget;
 	public float PatrolingPauseTimeLeft;
 
-	public Mob(MobSettings mobSettings, Room room, float2 position) : base(room, mobSettings, OwnerId.Enemy, position)
+	public Mob(MobSettings mobSettings, Room room, float2 position) : base(room, mobSettings.Health, mobSettings, OwnerId.Enemy, position)
 	{
 		MobSettings = mobSettings;
 		PatrolTarget = position;
