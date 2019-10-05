@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 232d7c7f8cbffed4fb7e91f4598c3171, type: 3}
-  m_Name: MinniPiggy
+  m_Name: Golem
   m_EditorClassIdentifier: 
+  ColliderType: 1
   Size:
-    x: 0.25
-    y: 0.175
+    x: 0.35
+    y: 0.4
   IsStatic: 0
   Density: 1
-  ColliderType: 1
   MovementSpeed: 0

@@ -155,82 +155,18 @@ MonoBehaviour:
     - X: 0
       Y: 0
       StuffInRoom:
-      - ObjectType: {fileID: 11400000, guid: 4fbac69b04effdb4c8f9f80ddbdf1206, type: 2}
-        Position:
-          x: -2
-          y: 1
-      - ObjectType: {fileID: 11400000, guid: 4fbac69b04effdb4c8f9f80ddbdf1206, type: 2}
-        Position:
-          x: -1
-          y: 2
-      - ObjectType: {fileID: 11400000, guid: 4fbac69b04effdb4c8f9f80ddbdf1206, type: 2}
-        Position:
-          x: 1
-          y: -1
-      - ObjectType: {fileID: 11400000, guid: 4fbac69b04effdb4c8f9f80ddbdf1206, type: 2}
-        Position:
-          x: 2
-          y: -2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 1
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 1
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 1
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 1
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: 3
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: -1
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: -2
-      - ObjectType: {fileID: 11400000, guid: dbd1b2c0414e47642975a1f2715bb9cf, type: 2}
-        Position:
-          x: -3
-          y: -3
-      - ObjectType: {fileID: 11400000, guid: 7ed192fbcf38c9a4fbafeff4652cec4b, type: 2}
+      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
         Position:
           x: 3
           y: 3
-      - ObjectType: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
+      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
         Position:
-          x: 0
-          y: 0
+          x: 3
+          y: 3
+      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+        Position:
+          x: 3
+          y: 3
 --- !u!4 &170815725
 Transform:
   m_ObjectHideFlags: 0
@@ -298,7 +234,7 @@ Camera:
   far clip plane: 500
   field of view: 60
   orthographic: 1
-  orthographic size: 4.5
+  orthographic size: 6
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

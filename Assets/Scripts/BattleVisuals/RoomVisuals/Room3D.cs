@@ -12,7 +12,6 @@ public class Room3D : MonoBehaviour
 		var prefab = Resources.Load<Room3D>($"Rooms/{room.RoomData.Name}");
 		var instance = Instantiate(prefab);
 		instance.transform.position = room.Position3D + Vector3.forward * Camera.main.farClipPlane;
-		instance.transform.localScale = new Vector3(room.Width, room.Height, 1);
 		instance.room = room;
 		return instance;
 	}
