@@ -29,6 +29,11 @@ public class BattleObject3D : MonoBehaviour
 	public BattleViewController ViewController { get; private set; }
 
 	/// <summary>
+	/// Animator for this object;
+	/// </summary>
+	public Animator Animator { get; private set; }
+
+	/// <summary>
 	/// Create a new 3D representation of the 3D object.
 	/// </summary>
 	public static BattleObject3D CreateNewVisual(BattleObject data, BattleViewController viewController)
@@ -42,8 +47,12 @@ public class BattleObject3D : MonoBehaviour
 
 		var newObject = BattleObject3D.Instantiate<BattleObject3D>(prefab);
 		newObject.Data = data;
+		newObject.Animator = newObject.gameObject.GetComponentInChildren<Animator>();
 		newObject.ViewController = viewController;
 		newObject.Sync(0);
+
+		if (newObject.Animator) newObject.Animator.logWarnings = false;
+
 		return newObject;
 	}
 
@@ -75,10 +84,9 @@ public class BattleObject3D : MonoBehaviour
 
 	public void Deactivate()
 	{
-		if (GetComponentInChildren<Animator>(true) is Animator animator)
+		if (Animator != null)
 		{
-			animator.logWarnings = false;
-			animator.SetTrigger("End");
+			Animator.SetTrigger("End");
 		}
 
 		if (OnDeathEffect != null)
