@@ -49,8 +49,18 @@ public class BattleObject3D : MonoBehaviour
 	/// </summary>
 	public virtual void Sync(float dT)
 	{
-		//transform.position = math.round(Data.Position3D * rounding) / rounding;
 		transform.position = Data.Position3D;
+		SyncFlip();
+	}
+
+	public void SyncFlip()
+	{
+		var sign = math.sign(Data.Velocity.x);
+		if (sign == 0) { return; }
+
+		var scale = transform.localScale;
+		scale.x = math.abs(scale.x) * sign;
+		transform.localScale = scale;
 	}
 
 	/// <summary>
