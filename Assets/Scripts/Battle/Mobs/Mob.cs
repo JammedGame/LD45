@@ -90,7 +90,7 @@ public class Mob : Unit
 		base.OnCollisionWith(obj);
 		if (obj is Mob || obj is Prop)
 		{
-			PatrolTarget = Position;
+			PatrolTarget = obj.Position + normalize(Position - obj.Position) * 2;
 		}
 	}
 
