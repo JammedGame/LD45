@@ -52,4 +52,15 @@ public class Player : Unit
 			}
 		}
 	}
+
+	public override void OnCollisionWithWall()
+	{
+		if (Room.CanProgressToNextRoom() 
+			&& Room.NextRoom != null
+			&& distance(Room.DoorPosition, Position) < 1)
+		{
+			Room = Room.NextRoom;
+			Position = Room.EntryPosition;
+		}
+	}
 }

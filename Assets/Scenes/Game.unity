@@ -164,8 +164,8 @@ MonoBehaviour:
     - X: 1
       Y: 2
       RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
-    - X: 1
-      Y: 3
+    - X: 2
+      Y: 2
       RoomPreset: {fileID: 11400000, guid: 18493c5cd9a18c34f96b779a98baed5a, type: 2}
 --- !u!4 &170815725
 Transform:
