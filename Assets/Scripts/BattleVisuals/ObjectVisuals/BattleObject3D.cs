@@ -47,7 +47,7 @@ public class BattleObject3D : MonoBehaviour
 	/// <summary>
 	/// Sync method to be executed each frame.
 	/// </summary>
-	public void Sync(float dT)
+	public virtual void Sync(float dT)
 	{
 		//transform.position = math.round(Data.Position3D * rounding) / rounding;
 		transform.position = Data.Position3D;

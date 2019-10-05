@@ -67,6 +67,8 @@ public abstract class BattleObject
 	/// </summary>
 	public Player Player => room.World.Player;
 
+	public float DistanceToPlayer => distance(Position, Player.Position);
+
 	/// <summary>
 	/// Room that this object currently belongs.
 	/// </summary>

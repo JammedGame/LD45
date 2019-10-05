@@ -6,6 +6,8 @@ public class MobSettings : BattleObjectSettings
 {
 	[Header("Mob Stuff")]
 	public float MovementSpeed;
+	public float AggroRange;
+
 	public override string VisualsPath => "Mobs/Visuals/" + name;
 
 	public override BattleObject SpawnIntoRoom(Room room, float2 position)

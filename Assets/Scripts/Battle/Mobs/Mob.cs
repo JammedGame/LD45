@@ -17,7 +17,20 @@ public class Mob : Unit
 
 		Velocity *= 0.98f;
 
-		AggroAct(dT);
+		var distanceToPlayer = DistanceToPlayer;
+		if (distanceToPlayer > MobSettings.AggroRange)
+		{
+			IdleAct(dT);
+		}
+		else
+		{
+			AggroAct(dT);
+		}
+	}
+
+	public void IdleAct(float dT)
+	{
+		CurrentAction = ActionType.Idle;
 	}
 
 	public void AggroAct(float dT)
