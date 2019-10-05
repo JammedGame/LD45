@@ -8,6 +8,6 @@ public class MobVisual : BattleObject3D
         base.Sync(dT);
 
         var mob = (Mob)Data;
-        GetComponent<Animator>().SetInteger("ActionType", (int)mob.CurrentAction);
+        GetComponent<Animator>().SetInteger("ActionType", (int)mob.CurrentAnimation);
     }
 }

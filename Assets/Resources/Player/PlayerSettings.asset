@@ -20,5 +20,5 @@ MonoBehaviour:
   Density: 1
   MovementSpeed: 13
   PushAwayRadius: 1.25
-  PushAwayForce: 0.42
+  PushAwayForce: 2
   Weapon1: {fileID: 11400000, guid: 386f20cea9ab07447b23beeafa87d472, type: 2}

@@ -179,6 +179,8 @@ public abstract class BattleObject
 		Push(normalizesafe(Position - source), intensity);
 	}
 
+	public float2 RandomDirection => room.World.RandomDirection;
+
 	#endregion
 
 	#region Projectiles

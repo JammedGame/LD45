@@ -167,6 +167,14 @@ MonoBehaviour:
         Position:
           x: 3
           y: 3
+      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+        Position:
+          x: 3
+          y: 3
+      - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+        Position:
+          x: 3
+          y: 3
 --- !u!4 &170815725
 Transform:
   m_ObjectHideFlags: 0
