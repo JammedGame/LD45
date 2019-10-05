@@ -20,4 +20,4 @@ MonoBehaviour:
   Density: 1
   Health: 1
   IsVulnerable: 1
-  spawnOnDeath: {fileID: 11400000, guid: 1f2943400431db348a0b51b909fa3a15, type: 2}
+  spawnOnDeath: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
