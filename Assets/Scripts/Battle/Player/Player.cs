@@ -45,11 +45,22 @@ public class Player : Unit
 			CurrentAnimation = AnimationType.Attack;			
 			if (attackProgress <= 0f)
 			{
-				var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				var mousePos = new float2(mousePos3D.x, mousePos3D.y);
+				var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Room.Position3D;
+				var mousePos = float2(mousePos3D.x, mousePos3D.y);
 				FireProjectile(mousePos, PlayerSettings.Damage, PlayerSettings.Weapon1);
 				attackProgress = PlayerSettings.FireRateDuration;
 			}
+		}
+	}
+
+	public override void OnCollisionWithWall()
+	{
+		if (Room.CanProgressToNextRoom() 
+			&& Room.NextRoom != null
+			&& distance(Room.DoorPosition, Position) < 1)
+		{
+			Room = Room.NextRoom;
+			Position = Room.EntryPosition;
 		}
 	}
 }

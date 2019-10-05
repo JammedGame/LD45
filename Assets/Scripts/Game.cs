@@ -15,4 +15,12 @@ public static class Game
 	{
 		SceneManager.LoadScene("Game");
 	}
+	
+
+
+
+
+
+
+
 }

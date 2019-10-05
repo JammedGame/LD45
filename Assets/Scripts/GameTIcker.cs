@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class GameTicker : MonoBehaviour
 	public GameWorld GameWorld;
 	public Room3DController RoomController;
 	public BattleViewController ViewController;
+	public Camera Camera;
 
 
 	/// <summary>
@@ -16,6 +18,7 @@ public class GameTicker : MonoBehaviour
 	{
 		var gameWorld = new GameWorld(levelData);
 		var newTicker = new GameObject("GameWorldTicker").AddComponent<GameTicker>();
+		newTicker.Camera = Camera.main;
 		newTicker.GameWorld = gameWorld;
 		newTicker.ViewController = new BattleViewController();
 		newTicker.RoomController = new Room3DController(gameWorld);
@@ -31,9 +34,29 @@ public class GameTicker : MonoBehaviour
 		}
 
 		var dT = Time.deltaTime;
+		var logicPaused = false;
 
-		GameWorld.Tick(dT);
+		if (MoveCameraAround(dT))
+		{
+			// don't update stuff while moving camera
+			logicPaused = true;
+		}
+
+		if (!logicPaused) GameWorld.Tick(dT);
 		ViewController.HandleViewEvents(GameWorld.ViewEventPipe);
 		ViewController.SyncEverything(dT);
 	}
+
+    private bool MoveCameraAround(float dT)
+    {
+        var cameraPos = Camera.transform.position;
+		var roomPos = GameWorld.Player.Room.Position3D;
+		var targetPos = new Vector3(roomPos.x, roomPos.y, cameraPos.z);
+
+		var dist = Vector3.Distance(targetPos, cameraPos);
+		if (dist <= 0.01f) return false;
+
+		Camera.transform.position = Vector3.MoveTowards(cameraPos, targetPos, 40 * dT);
+		return true;
+    }
 }

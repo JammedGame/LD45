@@ -22,6 +22,16 @@ public class GameWorld
         // init rooms
         Rooms = gameWorldData.Rooms.ConvertAll(roomData => new Room(this, roomData));
 
+        // set next room refs
+        for(int i = 0; i < Rooms.Count - 1; i++)
+        {
+            Rooms[i].SetNextRoom(Rooms[i + 1]);
+        }
+        for(int i = 1; i < Rooms.Count; i++)
+        {
+            Rooms[i].SetRoomBefore(Rooms[i - 1]);
+        }
+
         // add player
         Player = new Player
         (
