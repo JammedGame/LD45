@@ -219,3 +219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathAnimationDuration: 0
+  OnDeathEffect: {fileID: 3415556059256965395, guid: a10b4206371a2a24e936f96e5764f691,
+    type: 3}
+  OnDeathEffectDuration: 0.75

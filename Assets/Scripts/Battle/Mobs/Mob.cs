@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using static Unity.Mathematics.math;
 
@@ -8,6 +9,8 @@ public class Mob : Unit
 	
 	public float2 PatrolTarget;
 	public float PatrolingPauseTimeLeft;
+
+	public float AttackProgress;
 
 	public Mob(MobSettings mobSettings, Room room, float2 position) : base(room, mobSettings.Health, mobSettings, OwnerId.Enemy, position)
 	{
@@ -20,19 +23,42 @@ public class Mob : Unit
 		base.OnAct(dT);
 
 		Velocity *= 0.98f;
+		AttackProgress -= dT;
 
 		var distanceToPlayer = DistanceToPlayer;
 		if (distanceToPlayer > MobSettings.AggroRange)
 		{
 			PatrolAct(dT);
 		}
-		else
+		else if (distanceToPlayer > MobSettings.AttackRange)
 		{
 			AggroAct(dT);
 		}
+		else
+		{
+			AttackAct(dT);
+		}
 	}
 
-	public void PatrolAct(float dT)
+    private void AttackAct(float dT)
+    {
+		CurrentAnimation = AnimationType.Attack;
+		if (AttackProgress <= 0)
+		{
+			AttackProgress = MobSettings.AttackDuration;
+
+			if (MobSettings.Projectile)
+			{
+				FireProjectile(Player.Position, MobSettings.AttackDamage, MobSettings.Projectile);
+			}
+			else
+			{
+				Player.DealDamage(MobSettings.AttackDamage, this);
+			}
+		}
+    }
+
+    public void PatrolAct(float dT)
 	{
 		var distToPatrolTarget = distance(Position, PatrolTarget);
 		if (distToPatrolTarget <= 0.2f)

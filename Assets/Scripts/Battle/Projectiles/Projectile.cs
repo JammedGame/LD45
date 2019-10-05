@@ -32,7 +32,7 @@ public class Projectile : BattleObject
     {
         base.OnCollisionWith(hitObject);
 
-        if (hitObject != Parent)
+        if (hitObject.Owner != Owner)
         {
             hitObject.Push(Direction, ProjectileSettings.PushOnImpact);
             hitObject.DealDamage(Damage, Parent);
