@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColliderType: 1
   Size:
-    x: 0.5
-    y: 0.35
+    x: 0.35
+    y: 0.25
   IsStatic: 0
   Density: 1
   MovementSpeed: 13
