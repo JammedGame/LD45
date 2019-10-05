@@ -34,14 +34,15 @@ public class GameTicker : MonoBehaviour
 		}
 
 		var dT = Time.deltaTime;
+		var logicPaused = false;
 
 		if (MoveCameraAround(dT))
 		{
 			// don't update stuff while moving camera
-			return;
+			logicPaused = true;
 		}
 
-		GameWorld.Tick(dT);
+		if (!logicPaused) GameWorld.Tick(dT);
 		ViewController.HandleViewEvents(GameWorld.ViewEventPipe);
 		ViewController.SyncEverything(dT);
 	}
