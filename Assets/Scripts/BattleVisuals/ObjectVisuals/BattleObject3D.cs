@@ -72,6 +72,12 @@ public class BattleObject3D : MonoBehaviour
 
 	public void Deactivate()
 	{
+		if (GetComponentInChildren<Animator>(true) is Animator animator)
+		{
+			animator.logWarnings = false;
+			animator.SetTrigger("End");
+		}
+
 		Invoke("Dispose", DeathAnimationDuration);
 	}
 
