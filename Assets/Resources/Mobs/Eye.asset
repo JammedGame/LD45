@@ -18,8 +18,8 @@ MonoBehaviour:
     y: 0.4
   IsStatic: 0
   Density: 1
-  MovementSpeed: 8
-  AggroRange: 5
+  MovementSpeed: 11
+  AggroRange: 8
   Health: 1
   PatrollingDistance: 1.5
   PatrollingPause: 1.5
