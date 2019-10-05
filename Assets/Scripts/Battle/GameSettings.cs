@@ -5,5 +5,6 @@ public class GameSettings : ScriptableObject<GameSettings>
 	[Header("Room size")]
 	public float RoomWidth;
 	public float RoomHeight;
-	public float RoomPadding;
+	public float RoomWidthPadding;
+	public float RoomHeightPadding;
 }

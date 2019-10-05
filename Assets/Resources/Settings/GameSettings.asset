@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomWidth: 18
   RoomHeight: 7.75
-  RoomPadding: 0
+  RoomWidthPadding: 5
+  RoomHeightPadding: 8
