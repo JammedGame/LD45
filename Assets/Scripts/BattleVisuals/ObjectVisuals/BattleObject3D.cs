@@ -15,6 +15,9 @@ public class BattleObject3D : MonoBehaviour
 	/// </summary>
 	public float DeathAnimationDuration;
 
+	public GameObject OnDeathEffect;
+	public float OnDeathEffectDuration;
+
 	/// <summary>
 	/// Object being rendered by this 3d object.
 	/// </summary>
@@ -76,6 +79,12 @@ public class BattleObject3D : MonoBehaviour
 		{
 			animator.logWarnings = false;
 			animator.SetTrigger("End");
+		}
+
+		if (OnDeathEffect != null)
+		{
+			var instance = GameObject.Instantiate(OnDeathEffect, transform.position, Quaternion.identity);
+			Destroy(instance, OnDeathEffectDuration);
 		}
 
 		Invoke("Dispose", DeathAnimationDuration);
