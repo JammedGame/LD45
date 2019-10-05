@@ -42,10 +42,10 @@ public abstract class BattleObject
 	/// </summary>
 	public float2 Size;
 
-	/// <summary>
-	/// Is the object currently active? Will be removed from the list of active objects in room if not.
-	/// </summary>
-	public bool IsActive = true;
+    /// <summary>
+    /// Is the object currently active? Will be removed from the list of active objects in room if not.
+    /// </summary>
+    public bool IsActive = true;
 
 	/// <summary>
 	/// Time ticked since this object has been added to the battle.
@@ -132,6 +132,16 @@ public abstract class BattleObject
 	protected virtual void OnAct(float dT) {}
 
 	/// <summary>
+	/// Deal damage to this object.
+	/// </summary>
+	public virtual void DealDamage(float damage, BattleObject source) {}
+
+	/// <summary>
+	/// Check if object should be destroyed.
+	/// </summary>
+	public virtual void CheckHealth() {}
+
+	/// <summary>
 	/// Called when object is dead.
 	/// </summary>
 	public void Deactivate()
@@ -185,14 +195,9 @@ public abstract class BattleObject
 
 	#region Projectiles
 
-	public Projectile FireProjectile(BattleObject target, ProjectileSettings projectileType)
+	public Projectile FireProjectile(float2 position, float damage, ProjectileSettings projectileType)
 	{
-		return FireProjectile(target.Position, projectileType);
-	}
-
-	public Projectile FireProjectile(float2 position, ProjectileSettings projectileType)
-	{
-		var projectile = new Projectile(Room, projectileType, this, Position);
+		var projectile = new Projectile(Room, damage, projectileType, this, Position);
 		projectile.DirectAt(position);
 		return projectile;
 	}

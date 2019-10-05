@@ -9,7 +9,7 @@ public class Mob : Unit
 	public float2 PatrolTarget;
 	public float PatrolingPauseTimeLeft;
 
-	public Mob(MobSettings mobSettings, Room room, float2 position) : base(room, mobSettings, OwnerId.Enemy, position)
+	public Mob(MobSettings mobSettings, Room room, float2 position) : base(room, mobSettings.Health, mobSettings, OwnerId.Enemy, position)
 	{
 		MobSettings = mobSettings;
 		PatrolTarget = position;
@@ -62,7 +62,7 @@ public class Mob : Unit
 	public override void OnCollisionWith(BattleObject obj)
 	{
 		base.OnCollisionWith(obj);
-		if (obj is Mob)
+		if (obj is Mob || obj is Prop)
 		{
 			PatrolTarget = Position;
 		}
