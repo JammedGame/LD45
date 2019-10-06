@@ -21,7 +21,7 @@ public static class Game
 
 	[ExecutableCommand]
 #if UNITY_EDITOR
-	[UnityEditor.MenuItem("Game/Reboot _F11")]
+	[UnityEditor.MenuItem("Game/GoToNextLevel _F11")]
 #endif
 	public static void GoToNextLevel()
 	{
