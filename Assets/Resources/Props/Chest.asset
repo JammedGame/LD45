@@ -31,7 +31,7 @@ MonoBehaviour:
       Proc: 0.5
     - Type: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
       Proc: 0.25
-  - Weight: 100
+  - Weight: 1
     ItemPool:
     - Type: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
       Proc: 1

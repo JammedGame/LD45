@@ -21,7 +21,7 @@ MonoBehaviour:
   MovementSpeed: 75
   Inertia: 0.7
   PushAwayRadius: 1.25
-  PushAwayForce: 4
+  PushAwayForce: 2
   Health: 10
   FireRateDuration: 0.5
   Damage: 1
