@@ -101,17 +101,10 @@ public static class ListUtil
 	public static bool SpawnIntoRoom<T>(this List<T> listToSpawn, Room room, List<float2> positionsPool, bool isInitialSpawn)
 		where T : BattleObjectSettings
 	{
-		var bag = new List<float2>();
-
-		foreach(var stuffType in listToSpawn)
+		var positions = positionsPool.GetSpawnPoints(listToSpawn.Count);
+        for (int i = 0; i < listToSpawn.Count; i++)
 		{
-			// bag prevents objects being spawned into same positions, until pool is exhausted
-			if (bag.Count == 0) { bag.AddRange(positionsPool); }
-			var posIndex = UnityEngine.Random.Range(0, bag.Count);
-			var pos = bag[posIndex];
-			bag.RemoveAt(posIndex);
-
-			var stuff = stuffType.SpawnIntoRoom(room, pos);
+            var stuff = listToSpawn[i].SpawnIntoRoom(room, positions[i]);
 			stuff.WasPartOfTheRoom = isInitialSpawn; // this controls whether there will be a spawn animation
 		}
 
