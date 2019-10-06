@@ -24,12 +24,9 @@ public class RoomPreset : ScriptableObject
 
 		switch(index)
 		{
-			case 0:
-				return FirstWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, true);
-			case 1:
-				return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
-			case 2:
-				return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
+			case 0:	return FirstWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, true);
+			case 1: return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
+			case 2:	return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
 		}
 
 		return false;

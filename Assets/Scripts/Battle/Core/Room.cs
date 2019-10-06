@@ -17,6 +17,7 @@ public class Room
 	public readonly List<Unit> AllUnits = new List<Unit>();
 	public float2 DoorPosition;
 	public float2 EntryPosition;
+	public int CurrentWave;
 
 	public Room(GameWorld gameWorld, int x, int y, RoomPreset data)
 	{
