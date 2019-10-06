@@ -31,13 +31,7 @@ public class Room
 		Height = gameSettings.RoomHeight;
 		Position3D.x = X * (Width + gameSettings.RoomWidthPadding);
 		Position3D.y = Y * (Height + gameSettings.RoomHeightPadding);
-
-		// spawn objects
-		foreach(var stuff in data.StuffInRoom)
-		{
-			var obj = stuff.ObjectType.SpawnIntoRoom(this, stuff.Position);
-			obj.WasPartOfTheRoom = true;
-		}
+		data.SpawnStuffIntoRooms(this);
 	}
 
 	public void SetNextRoom(Room nextRoom)

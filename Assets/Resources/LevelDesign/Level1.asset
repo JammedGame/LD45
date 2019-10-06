@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5831230c1ea34bd4097c14cd350b00ad, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  Rooms:
+  - RoomPreset: {fileID: 11400000, guid: f46b0e089e7af0c4e90247f5c355952c, type: 2}
+    LoreInRoom: {fileID: 0}
+  - RoomPreset: {fileID: 11400000, guid: 4f1b80a08e6843744b70af0be90452db, type: 2}
+    LoreInRoom: {fileID: 0}
+  - RoomPreset: {fileID: 11400000, guid: 1b2edbf96f0108d44879b6cca530f12c, type: 2}
+    LoreInRoom: {fileID: 0}
+  - RoomPreset: {fileID: 11400000, guid: 54d45cea06e0f124ba520ec18cdc7729, type: 2}
+    LoreInRoom: {fileID: 0}
+  - RoomPreset: {fileID: 11400000, guid: e864772d730a98748bb43b0ff06c7dbd, type: 2}
+    LoreInRoom: {fileID: 0}
+  - RoomPreset: {fileID: 11400000, guid: d7005d6745fae22419ad5086f43fe360, type: 2}
+    LoreInRoom: {fileID: 0}
+  MobSpawnPoints:
+  - x: -2
+    y: 0
+  - x: -1
+    y: 2.5
+  - x: 1
+    y: 2.5
+  - x: 2
+    y: 0
+  - x: -1
+    y: -2.5
+  - x: 1
+    y: -2.5
+  PotSpawnPoints:
+  - x: -6
+    y: -3
+  - x: -6
+    y: 3
+  - x: 6
+    y: -3
+  - x: 6
+    y: 3
+  Pot: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
+  Chest: {fileID: 11400000, guid: 0e41030280ea0434f871fc52a4ab8205, type: 2}
