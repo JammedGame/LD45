@@ -17,7 +17,7 @@ public class Room
 	public readonly List<Unit> AllUnits = new List<Unit>();
 	public float2 DoorPosition;
 	public float2 EntryPosition;
-	public int CurrentWave;
+	public int NextWave = 1;
 
 	public Room(GameWorld gameWorld, int x, int y, RoomPreset data)
 	{
@@ -94,10 +94,17 @@ public class Room
 
 	public void Tick(float dT)
 	{
+		// spawn waves
+		if (CanProgressToNextRoom() && RoomData.SpawnWave(this, NextWave))
+		{
+			NextWave++;
+		}
+
 		TickObjects(dT);
 		TickCollision(dT);
 		CleanUpDeadStuff();
 	}
+	public float SpawnTimer = 1f;
 
 	private void TickObjects(float dT)
 	{

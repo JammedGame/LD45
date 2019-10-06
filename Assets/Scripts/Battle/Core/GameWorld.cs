@@ -12,19 +12,30 @@ public class GameWorld
 	public readonly ViewEventsPipe ViewEventPipe;
     public Unity.Mathematics.Random RandomGenerator;
 
-    public GameWorld(GameWorldData gameWorldData)
+    public GameWorld(GameWorldData levelData)
     {
         // init basic stuff
-        GameWorldData = gameWorldData;
+        GameWorldData = levelData;
         RandomGenerator = new Unity.Mathematics.Random((uint)GetHashCode());
         ViewEventPipe = new ViewEventsPipe();
 
         // init rooms
         int x = 0, y = 0;
         Rooms = new List<Room>();
-        foreach(var data in gameWorldData.Rooms)
+
+        // do the rooms
+        var roomPresets = new List<RoomPreset>();
+        roomPresets.Add(LoadRoomPreset("1")); // first level always fixed
+        roomPresets.AddRange(LoadPresets(2, 5, randomize: levelData.LevelId > 1));
+        roomPresets.Add(LoadRoomPreset("Pause"));
+        roomPresets.AddRange(LoadPresets(6, 10));
+        roomPresets.Add(LoadRoomPreset("Pause"));
+        roomPresets.AddRange(LoadPresets(11, 15));
+        roomPresets.Add(LoadRoomPreset("Boss"));
+
+        foreach(var roomPreset in roomPresets)
         {
-            Rooms.Add(new Room(this, x, y, data.RoomPreset));
+            Rooms.Add(new Room(this, x, y, roomPreset));
 
             // move up or right
             var proc = UnityEngine.Random.Range(0, 100) > 50;
@@ -60,4 +71,23 @@ public class GameWorld
 	}
 
     public float2 RandomDirection => RandomGenerator.NextFloat2Direction();
+
+    public IEnumerable<RoomPreset> LoadPresets(int from, int to, bool randomize = true)
+    {
+        var pool = new List<int>();
+        for(int i = from; i <= to; i++) { pool.Add(i); }
+
+        while(pool.Count > 0)
+        {
+            var id = randomize 
+                ? pool[UnityEngine.Random.Range(0, pool.Count)] 
+                : pool[0];
+
+            pool.Remove(id);
+            yield return LoadRoomPreset(id);
+        }
+    }
+
+    public RoomPreset LoadRoomPreset(object id) => 
+        Resources.Load<RoomPreset>($"LevelDesign/Level{GameWorldData.LevelId}/Lvl{GameWorldData.LevelId}-{id}");
 }
