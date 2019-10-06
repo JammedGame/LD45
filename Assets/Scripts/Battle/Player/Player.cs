@@ -32,7 +32,7 @@ public class Player : Unit
         if (movement.x != 0 || movement.y != 0)
         {
             Velocity += normalize(movement) * PlayerSettings.MovementSpeed * dT;
-            InertiaLol = TimeSinceInit + 1;
+            InertiaLol = TimeSinceInit + 0.15f;
             CurrentAnimation = AnimationType.Move;
         }
 
@@ -79,5 +79,10 @@ public class Player : Unit
                 Position = Room.DoorPosition * 0.9f;
             }
         }
+    }
+
+    public override void DealDamage(float damage, BattleObject source)
+    {
+        InertiaLol = 0;
     }
 }
