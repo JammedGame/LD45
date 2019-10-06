@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UpgradeDamage : MonoBehaviour
+public class UpgradeDamage : MonoBehaviour, IPointerClickHandler
 {
-    public Image image;
-    
-    public void ShowImage(){
-        image.gameObject.SetActive(true);
-    }
-
-        public void HideImage(){
-        image.gameObject.SetActive(false);
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Game.Player.DamageBonus += 0.2f;
+        Game.Player.SkillPoints -= 10;
     }
 }
