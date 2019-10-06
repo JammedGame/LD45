@@ -6,6 +6,7 @@ public class PlayerSettings : BattleObjectSettings
 {
 	[Header("Player Stuff")]
 	public float MovementSpeed;
+	public float Inertia;
 
 	[Header("Push Away")]
 	public float PushAwayRadius;

@@ -18,7 +18,8 @@ MonoBehaviour:
     y: 0.25
   IsStatic: 0
   Density: 1
-  MovementSpeed: 13
+  MovementSpeed: 75
+  Inertia: 0.7
   PushAwayRadius: 1.25
   PushAwayForce: 4
   Health: 10

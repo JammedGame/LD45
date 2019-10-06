@@ -16,18 +16,23 @@ public class Player : Unit
         PlayerSettings = settings;
     }
 
+    float InertiaLol;
+
     protected override void OnAct(float dT)
     {
         // a bit less intertia than other stuff
-        Velocity *= 0.98f;
 
         CurrentAnimation = AnimationType.Idle;
+
+        if (TimeSinceInit < InertiaLol)
+            Velocity *= PlayerSettings.Inertia;
 
         // move around of arrow keys
         var movement = new float2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (movement.x != 0 || movement.y != 0)
         {
             Velocity += normalize(movement) * PlayerSettings.MovementSpeed * dT;
+            InertiaLol = TimeSinceInit + 1;
             CurrentAnimation = AnimationType.Move;
         }
 
