@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public static class Game
 {
+	public static readonly GameState GameState = new GameState();
 	public static GameTicker ActiveGame;
 	public static Player Player => ActiveGame?.GameWorld.Player;
 	public static readonly SettingsCache<PlayerSettings> PlayerSettings = new SettingsCache<PlayerSettings>("Player/PlayerSettings");
-	public static readonly GameState GameState = new GameState();
+
 
 	[ExecutableCommand]
 #if UNITY_EDITOR
@@ -29,6 +30,17 @@ public static class Game
 		GameState.SkillPoints = Player.SkillPoints;
 		SceneManager.LoadScene("Game");
 	}
+
+	// reset state on enter play mode
+#if UNITY_EDITOR
+	static Game()
+	{
+		UnityEditor.EditorApplication.playModeStateChanged += (arg) =>
+		{
+			GameState.Reset();
+		};
+	}
+#endif
 }
 
 public class GameState
