@@ -8,7 +8,7 @@ public class Room
 	public readonly GameWorld World;
 	public readonly RoomPreset RoomData;
 	public Room NextRoom { get; private set; }
-	public Room RoomBefore { get; private set; }
+	public Room PreviousRoom { get; private set; }
 	public readonly int X, Y;
 	public readonly float2 Position;
 	public readonly Vector3 Position3D;
@@ -56,17 +56,17 @@ public class Room
 	{
 		if (roomBefore == null) return;
 
-		RoomBefore = roomBefore;
+		PreviousRoom = roomBefore;
 
-		if (RoomBefore.X == X - 1)
+		if (PreviousRoom.X == X - 1)
 		{
 			EntryPosition = new float2(-GameSettings.Instance.RoomWidth / 2f, 0f);
 		}
-		else if (RoomBefore.Y == Y - 1)
+		else if (PreviousRoom.Y == Y - 1)
 		{
 			EntryPosition = new float2(0f, -GameSettings.Instance.RoomHeight / 2f);
 		}
-	}	
+	}
 
 	public bool CanProgressToNextRoom()
 	{

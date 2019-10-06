@@ -62,12 +62,22 @@ public class Player : Unit
 
     public override void OnCollisionWithWall()
     {
-        if (Room.CanProgressToNextRoom()
-            && Room.NextRoom != null
-            && distance(Room.DoorPosition, Position) < 1)
+        if (Room.CanProgressToNextRoom())
         {
-            Room = Room.NextRoom;
-            Position = Room.EntryPosition;
+            if (Room.NextRoom != null
+                && distance(Room.DoorPosition, Position) < 1)
+            {
+                Room = Room.NextRoom;
+                Velocity = 0;
+                Position = Room.EntryPosition * 0.9f;
+            }
+            else if (Room.PreviousRoom != null
+                && distance(Room.EntryPosition, Position) < 1)
+            {
+                Room = Room.PreviousRoom;
+                Velocity = 0;
+                Position = Room.DoorPosition * 0.9f;
+            }
         }
     }
 }

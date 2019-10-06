@@ -6,11 +6,11 @@ public class Mob : Unit
 {
 	public readonly MobSettings MobSettings;
 	public AnimationType CurrentAnimation;
-	
+
 	public float2 PatrolTarget;
 	public float PatrolingPauseTimeLeft;
-
 	public float AttackProgress;
+	public bool Enraged;
 
 	public Mob(MobSettings mobSettings, Room room, float2 position) : base(room, mobSettings.Health, mobSettings, OwnerId.Enemy, position)
 	{
@@ -26,17 +26,17 @@ public class Mob : Unit
 		AttackProgress -= dT;
 
 		var distanceToPlayer = DistanceToPlayer;
-		if (distanceToPlayer > MobSettings.AggroRange)
+		if (distanceToPlayer <= MobSettings.AttackRange || AttackProgress > 0f)
 		{
-			PatrolAct(dT);
+			AttackAct(dT);
 		}
-		else if (distanceToPlayer > MobSettings.AttackRange)
+		else if (distanceToPlayer <= MobSettings.AggroRange || Enraged)
 		{
 			AggroAct(dT);
 		}
 		else
 		{
-			AttackAct(dT);
+			PatrolAct(dT);
 		}
 	}
 
@@ -54,6 +54,7 @@ public class Mob : Unit
 			else
 			{
 				Player.DealDamage(MobSettings.AttackDamage, this);
+				Player.PushFrom(Position, MobSettings.AttackPush);
 			}
 		}
     }
@@ -98,6 +99,7 @@ public class Mob : Unit
 	{
 		CurrentAnimation = AnimationType.Move;
 		MoveTowards(Player.Position, dT);
+		Enraged = true;
 	}
 
 	public void MoveTowards(float2 targetPos, float dT)

@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Room3D : MonoBehaviour
 {
-	public GameObject RightDoor;
-	public GameObject TopDoor;
+	public GameObject EastDoor;
+	public GameObject NorthDoor;
+	public GameObject WestDoor;
+	public GameObject SouthDoor;
 
 	public Room room { get; private set; }
 
@@ -17,15 +19,11 @@ public class Room3D : MonoBehaviour
 		instance.transform.position = room.Position3D + Vector3.forward * Camera.main.farClipPlane;
 		instance.room = room;
 
-		if (instance.TopDoor)
-			instance.TopDoor.SetActive(room.NextRoom != null && room.NextRoom.Y == room.Y + 1);
-		else
-			Debug.LogError("STAVI DOOR TEBRA");
+		instance.NorthDoor.SetActive(room.NextRoom != null && room.NextRoom.Y == room.Y + 1 );
+		instance.EastDoor.SetActive(room.NextRoom != null && room.NextRoom.X == room.X + 1);
 
-		if (instance.RightDoor)
-			instance.RightDoor.SetActive(room.NextRoom != null && room.NextRoom.X == room.X + 1);			
-		else
-			Debug.LogError("STAVI DOOR TEBRA");
+		instance.WestDoor.SetActive(room.PreviousRoom != null && room.PreviousRoom.X == room.X - 1 );
+		instance.SouthDoor.SetActive(room.PreviousRoom != null && room.PreviousRoom.Y == room.Y - 1);
 
 		return instance;
 	}

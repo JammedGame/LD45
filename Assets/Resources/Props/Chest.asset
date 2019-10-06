@@ -9,15 +9,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7975e9a540763da418f8cdbb3db7401c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b3103909067f6d4bb4956c9b5f35bad, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
   ColliderType: 2
   Size:
-    x: 0.5
+    x: 0.7
     y: 0.4
-  IsStatic: 1
+  IsStatic: 0
   Density: 1
-  Health: 1
-  IsVulnerable: 0
-  spawnOnDeath: {fileID: 0}
+  PossibleDrops:
+  - Weight: 4
+    ItemPool:
+    - Type: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
+      Proc: 1
+    - Type: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
+      Proc: 1
+    - Type: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
+      Proc: 1
+    - Type: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
+      Proc: 0.5
+    - Type: {fileID: 11400000, guid: 3206281ed913b3b4d9aa50b588035bf6, type: 2}
+      Proc: 0.25
+  - Weight: 1
+    ItemPool:
+    - Type: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+      Proc: 1

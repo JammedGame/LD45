@@ -21,5 +21,10 @@ MonoBehaviour:
   MovementSpeed: 7
   AggroRange: 4
   Health: 2
+  AttackRange: 1
+  AttackDuration: 1.5
+  AttackDamage: 1
+  AttackPush: 0.25
+  Projectile: {fileID: 0}
   PatrollingDistance: 1.5
-  PatrollingPause: 1.5
+  PatrollingPause: 1
