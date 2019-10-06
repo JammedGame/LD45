@@ -50,7 +50,7 @@ public class GameTicker : MonoBehaviour
     private bool MoveCameraAround(float dT)
     {
         var cameraPos = Camera.transform.position;
-		var roomPos = GameWorld.Player.Room.Position3D;
+		var roomPos = GameWorld.Player.Room.Position3D + Vector3.up * 0.3f;
 		var targetPos = new Vector3(roomPos.x, roomPos.y, cameraPos.z);
 
 		var dist = Vector3.Distance(targetPos, cameraPos);
