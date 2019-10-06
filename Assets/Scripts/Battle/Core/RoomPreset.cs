@@ -9,33 +9,26 @@ public class RoomPreset : ScriptableObject
 {
 	public string Name = "Room";
 	public int PotCount;
-	public List<MobSettings> FirstWave;
-	public List<MobSettings> SecondWave;
-	public List<MobSettings> ThirdWave;
+	
+	public int FirstWaveGolems;
+	public int FirstWaveEyes;
+	public int SecondWaveGolems;
+	public int SecondWaveEyes;
+	public int ThirdWaveGolems;
+	public int ThirdWaveEyes;
 
 	// fixed stuff
 	[Table] public List<ObjectInRoomData> StuffInRoom;
 
-	public bool SpawnWave(Room room, int index)
-	{
-		var levelData = room.World.GameWorldData;
-
-		switch(index)
-		{
-			case 0:	return FirstWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, true);
-			case 1: return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
-			case 2:	return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
-		}
-
-		return false;
-	}
-
 	public void SpawnStuffIntoRooms(Room room)
 	{
 		var levelData = room.World.GameWorldData;
+		room.FirstWave = CreateWaveData(room, FirstWaveGolems, FirstWaveEyes);
+		room.SecondWave = CreateWaveData(room, SecondWaveGolems, SecondWaveEyes);
+		room.ThirdWave = CreateWaveData(room, ThirdWaveGolems, ThirdWaveEyes);
 
-		// mobs
-		SpawnWave(room, 0);
+		// initial wave
+		room.SpawnWave(0);
 		
 		// pots
 		var positions = levelData.PotSpawnPoints.GetSpawnPoints(PotCount);
@@ -55,12 +48,15 @@ public class RoomPreset : ScriptableObject
 			}
 		}
 	}
-}
 
-[Serializable]
-public class MobWave
-{
-	
+	public List<MobSettings> CreateWaveData(Room room, int golems, int eyes)
+	{
+		var list = new List<MobSettings>();
+		var data = room.World.GameWorldData;
+		for(int i = 0; i < golems; i++) list.Add(data.Golem);
+		for(int i = 0; i < eyes; i++) list.Add(data.Eye);
+		return list;
+	}
 }
 
 [Serializable]

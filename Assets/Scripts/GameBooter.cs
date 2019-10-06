@@ -9,8 +9,6 @@ public class GameBooter : MonoBehaviour
 
     void Awake()
     {
-        SceneManager.LoadScene("GameUI", LoadSceneMode.Additive);
-
         Application.targetFrameRate = 60;
         GameTicker.StartTicking(LevelData);
     }

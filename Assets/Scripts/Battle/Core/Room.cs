@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -95,7 +96,7 @@ public class Room
 	public void Tick(float dT)
 	{
 		// spawn waves
-		if (CanProgressToNextRoom() && RoomData.SpawnWave(this, NextWave))
+		if (CanProgressToNextRoom() && SpawnWave(NextWave))
 		{
 			NextWave++;
 		}
@@ -129,4 +130,20 @@ public class Room
 		AllObjects.RemoveAll(x => !x.IsActive);
 		AllUnits.RemoveAll(x => !x.IsActive);
 	}
+
+	public bool SpawnWave(int index)
+	{
+		switch(index)
+		{
+			case 0:	return FirstWave.SpawnIntoRoom(this, World.GameWorldData.MobSpawnPoints, true);
+			case 1: return SecondWave.SpawnIntoRoom(this, World.GameWorldData.MobSpawnPoints, false);
+			case 2:	return ThirdWave.SpawnIntoRoom(this, World.GameWorldData.MobSpawnPoints, false);
+		}
+
+		return false;
+	}	
+
+	[NonSerialized] public List<MobSettings> FirstWave;
+	[NonSerialized] public List<MobSettings> SecondWave;
+	[NonSerialized] public List<MobSettings> ThirdWave;
 }

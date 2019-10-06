@@ -14,14 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Room
   PotCount: 3
-  FirstWave:
-  - {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-  - {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-  - {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-  - {fileID: 11400000, guid: 7f3f54e7c626352429273bc85df32721, type: 2}
-  SecondWave:
-  - {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
-  - {fileID: 11400000, guid: 7f3f54e7c626352429273bc85df32721, type: 2}
-  - {fileID: 11400000, guid: 7f3f54e7c626352429273bc85df32721, type: 2}
-  ThirdWave: []
+  FirstWaveGolems: 2
+  FirstWaveEyes: 2
+  SecondWaveGolems: 3
+  SecondWaveEyes: 3
+  ThirdWaveGolems: 4
+  ThirdWaveEyes: 4
   StuffInRoom: []

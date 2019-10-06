@@ -10,14 +10,9 @@ public class GameWorldData : ScriptableObject
 	public List<float2> MobSpawnPoints;
 	public List<float2> PotSpawnPoints;
 	public PropSettings Pot;
+	public MobSettings Eye;
+	public MobSettings Golem;
 	public ChestSettings Chest;
 	public float ChestSpawnProb;
 	public float2 ItemSpawnPoint => float2.zero; 
-}
-
-[Serializable]
-public class RoomData
-{
-	public RoomPreset RoomPreset;
-	public LoreStoneSettings LoreInRoom;
 }

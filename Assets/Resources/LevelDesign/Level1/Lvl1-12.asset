@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Room
   PotCount: 3
-  FirstWave: []
-  SecondWave: []
-  ThirdWave: []
+  FirstWaveGolems: 2
+  FirstWaveEyes: 2
+  SecondWaveGolems: 4
+  SecondWaveEyes: 4
+  ThirdWaveGolems: 0
+  ThirdWaveEyes: 0
   StuffInRoom: []
