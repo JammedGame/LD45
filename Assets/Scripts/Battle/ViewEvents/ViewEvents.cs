@@ -6,7 +6,8 @@ using System.Collections.Generic;
 public enum ViewEventType
 {
 	Init = 0,
-	End = 1
+	End = 1,
+	SummonVfx = 2
 }
 
 /// <summary>
