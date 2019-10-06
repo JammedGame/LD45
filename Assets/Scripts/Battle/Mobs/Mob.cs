@@ -22,9 +22,9 @@ public class Mob : Unit
 	{
 		base.OnAct(dT);
 
-		if (!WasPartOfTheRoom && TimeSinceInit < MobSettings.SpawnDuration)
+		if (TimeSinceInit < MobSettings.SpawnDuration)
 		{
-			CurrentAnimation = AnimationType.Spawn;
+			CurrentAnimation = WasPartOfTheRoom ? AnimationType.Idle : AnimationType.Spawn;
 			return;
 		}
 

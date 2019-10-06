@@ -23,7 +23,7 @@ public class MobSettings : BattleObjectSettings
 	public float PatrollingDistance;
 	public float PatrollingPause;
 
-	public override string VisualsPath => "Mobs/Visuals/" + name;
+    public override string VisualsPath => "Mobs/Visuals/" + name;
 
 	public override BattleObject SpawnIntoRoom(Room room, float2 position)
 	{
