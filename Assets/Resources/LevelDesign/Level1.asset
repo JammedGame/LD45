@@ -26,18 +26,18 @@ MonoBehaviour:
   - RoomPreset: {fileID: 11400000, guid: d7005d6745fae22419ad5086f43fe360, type: 2}
     LoreInRoom: {fileID: 0}
   MobSpawnPoints:
-  - x: -2
+  - x: -3
     y: 0
-  - x: -1
-    y: 2.5
-  - x: 1
-    y: 2.5
-  - x: 2
+  - x: -1.5
+    y: 1.2
+  - x: 1.5
+    y: 1.2
+  - x: 3
     y: 0
-  - x: -1
-    y: -2.5
-  - x: 1
-    y: -2.5
+  - x: -1.5
+    y: -1.2
+  - x: 1.5
+    y: -1.2
   PotSpawnPoints:
   - x: -6
     y: -3

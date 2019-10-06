@@ -18,28 +18,21 @@ public class RoomPreset : ScriptableObject
 	// fixed stuff
 	[Table] public List<ObjectInRoomData> StuffInRoom;
 
-	public void SpawnWave(Room room, int index)
+	public bool SpawnWave(Room room, int index)
 	{
 		var levelData = room.World.GameWorldData;
 
 		switch(index)
 		{
 			case 0:
-				foreach(var mob in FirstWave)
-				{
-					var newMob = mob.SpawnIntoRoom(room, levelData.MobSpawnPoints.GetRandom());
-					newMob.WasPartOfTheRoom = true;
-				}
-				return;
+				return FirstWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, true);
 			case 1:
-				foreach(var mob in SecondWave)
-					mob.SpawnIntoRoom(room, levelData.MobSpawnPoints.GetRandom());
-				return;
+				return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
 			case 2:
-				foreach(var mob in ThirdWave)
-					mob.SpawnIntoRoom(room, levelData.MobSpawnPoints.GetRandom());
-				return;
+				return SecondWave.SpawnIntoRoom(room, levelData.MobSpawnPoints, false);
 		}
+
+		return false;
 	}
 
 	public void SpawnStuffIntoRooms(Room room)
@@ -47,16 +40,14 @@ public class RoomPreset : ScriptableObject
 		var levelData = room.World.GameWorldData;
 
 		// mobs
-		foreach(var mob in FirstWave)
-		{
-			mob.SpawnIntoRoom(room, levelData.MobSpawnPoints.GetRandom());
-		}
+		SpawnWave(room, 0);
 		
 		// pots
+		var positions = levelData.PotSpawnPoints.GetSpawnPoints(PotCount);
 		for(int i = 0; i < PotCount; i++)
 		{
 			var drop = UnityEngine.Random.Range(0f, 1f) <= ChestSpawnProb ? (BattleObjectSettings)levelData.Chest : (BattleObjectSettings)levelData.Pot;
-			drop.SpawnIntoRoom(room, levelData.PotSpawnPoints.GetRandom());
+			drop.SpawnIntoRoom(room, positions[i]);
 		}
 
 		// fixed stuff
@@ -86,9 +77,45 @@ public static class ListUtil
 	public static T GetRandom<T>(this IList<T> list)
 	{
 		if (list == null || list.Count == 0) return default(T);
-
-
-
 		return list[UnityEngine.Random.Range(0, list.Count)];
+	}
+
+	public static List<float2> GetSpawnPoints(this List<float2> positionPool, int count)
+	{
+		var bag = new List<float2>();
+		var finalList = new List<float2>();
+
+		for(int i = 0; i < count; i++)
+		{
+			// bag prevents objects being spawned into same positions, until pool is exhausted
+			if (bag.Count == 0) { bag.AddRange(positionPool); }
+
+			var posIndex = UnityEngine.Random.Range(0, bag.Count);
+			finalList.Add(bag[posIndex]);
+			bag.RemoveAt(posIndex);			
+		}
+
+		return finalList;
+	}
+
+	public static bool SpawnIntoRoom<T>(this List<T> listToSpawn, Room room, List<float2> positionsPool, bool isInitialSpawn)
+		where T : BattleObjectSettings
+	{
+		var bag = new List<float2>();
+
+		foreach(var stuffType in listToSpawn)
+		{
+			// bag prevents objects being spawned into same positions, until pool is exhausted
+			if (bag.Count == 0) { bag.AddRange(positionsPool); }
+			var posIndex = UnityEngine.Random.Range(0, bag.Count);
+			var pos = bag[posIndex];
+			bag.RemoveAt(posIndex);
+
+			var stuff = stuffType.SpawnIntoRoom(room, pos);
+			stuff.WasPartOfTheRoom = isInitialSpawn; // this controls whether there will be a spawn animation
+		}
+
+		// returns true if anything was spawned
+		return listToSpawn.Count > 0;
 	}
 }
