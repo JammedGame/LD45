@@ -63,7 +63,12 @@ public abstract class BattleObject
 	public GameWorld Level => room.World;
 
 	/// <summary>
-	/// Player.
+	/// 
+	/// </summary>
+	public bool WasPartOfTheRoom;
+
+	/// <summary>
+	/// Player convenience getter.
 	/// </summary>
 	public Player Player => room.World.Player;
 

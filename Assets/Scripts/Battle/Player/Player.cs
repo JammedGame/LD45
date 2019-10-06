@@ -84,5 +84,6 @@ public class Player : Unit
     public override void DealDamage(float damage, BattleObject source)
     {
         InertiaLol = 0;
+        base.DealDamage(damage, source);
     }
 }

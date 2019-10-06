@@ -149,3 +149,6 @@ MonoBehaviour:
   OnDeathEffect: {fileID: 3415556059256965395, guid: a10b4206371a2a24e936f96e5764f691,
     type: 3}
   OnDeathEffectDuration: 0.4
+  OnSpawnEffect: {fileID: 6871748429251297272, guid: 9f7870ca5e6d3a8499ce236e62d8fc2e,
+    type: 3}
+  OnSpawnEffectDuration: 0.4

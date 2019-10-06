@@ -22,6 +22,12 @@ public class Mob : Unit
 	{
 		base.OnAct(dT);
 
+		if (!WasPartOfTheRoom && TimeSinceInit < MobSettings.SpawnDuration)
+		{
+			CurrentAnimation = AnimationType.Spawn;
+			return;
+		}
+
 		Velocity *= 0.98f;
 		AttackProgress -= dT;
 
@@ -120,5 +126,6 @@ public enum AnimationType
 {
 	Idle = 0,
 	Move = 1,
-	Attack = 2
+	Attack = 2,
+	Spawn = 3
 }
