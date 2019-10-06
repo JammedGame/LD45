@@ -7,7 +7,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class RoomPreset : ScriptableObject
 {
-	public string Name = "Room";
 	public int PotCount;
 	
 	public int FirstWaveGolems;

@@ -14,7 +14,7 @@ public class Room3D : MonoBehaviour
 	/// </summary>
 	public static Room3D Init(Room room)
 	{
-		var prefab = Resources.Load<Room3D>($"Rooms/{room.RoomData.Name}");
+		var prefab = Resources.Load<Room3D>($"Rooms/{room.World.GameWorldData.RoomName}");
 		var instance = Instantiate(prefab);
 		instance.transform.position = room.Position3D + Vector3.forward * Camera.main.farClipPlane;
 		instance.room = room;

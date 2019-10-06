@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameWorldData : ScriptableObject
 {
+	public string RoomName = "Room";
 	public int LevelId;
 	public List<float2> MobSpawnPoints;
 	public List<float2> PotSpawnPoints;
