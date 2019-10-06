@@ -16,6 +16,7 @@ public static class Game
 #endif
 	public static void Reboot()
 	{
+		GameState.Level = 1;
 		SceneManager.LoadScene("Game");
 	}
 

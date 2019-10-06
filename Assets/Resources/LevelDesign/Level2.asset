@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   RoomName: Room
-  LevelId: 1
+  LevelId: 2
   MobSpawnPoints:
   - x: -3
     y: 0

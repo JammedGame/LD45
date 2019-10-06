@@ -14,6 +14,7 @@ public class GameWorld
 
     public GameWorld(GameWorldData levelData)
     {
+        Debug.Log("Entering Level " + levelData.LevelId);
         // init basic stuff
         GameWorldData = levelData;
         RandomGenerator = new Unity.Mathematics.Random((uint)GetHashCode());
