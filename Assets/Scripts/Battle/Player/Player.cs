@@ -86,4 +86,8 @@ public class Player : Unit
         InertiaLol = 0;
         base.DealDamage(damage, source);
     }
+
+    public void ShowAvailableUpgrades(){
+        
+    }
 }
