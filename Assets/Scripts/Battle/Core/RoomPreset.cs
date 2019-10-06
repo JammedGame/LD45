@@ -8,9 +8,7 @@ using UnityEngine;
 public class RoomPreset : ScriptableObject
 {
 	public string Name = "Room";
-
 	public int PotCount;
-	public float ChestSpawnProb;
 	public List<MobSettings> FirstWave;
 	public List<MobSettings> SecondWave;
 	public List<MobSettings> ThirdWave;
@@ -43,15 +41,18 @@ public class RoomPreset : ScriptableObject
 		var positions = levelData.PotSpawnPoints.GetSpawnPoints(PotCount);
 		for(int i = 0; i < PotCount; i++)
 		{
-			var drop = UnityEngine.Random.Range(0f, 1f) <= ChestSpawnProb ? (BattleObjectSettings)levelData.Chest : (BattleObjectSettings)levelData.Pot;
+			var drop = UnityEngine.Random.Range(0f, 1f) <= levelData.ChestSpawnProb ? (BattleObjectSettings)levelData.Chest : (BattleObjectSettings)levelData.Pot;
 			drop.SpawnIntoRoom(room, positions[i]);
 		}
 
 		// fixed stuff
 		foreach(var stuff in StuffInRoom)
 		{
-			var obj = stuff.ObjectType.SpawnIntoRoom(room, stuff.Position);
-			obj.WasPartOfTheRoom = true;
+			if (UnityEngine.Random.Range(0f, 1f) <= stuff.Procbability)
+			{
+				var obj = stuff.ObjectType.SpawnIntoRoom(room, stuff.Position);
+				obj.WasPartOfTheRoom = true;
+			}
 		}
 	}
 }
@@ -67,6 +68,7 @@ public class ObjectInRoomData
 {
 	public BattleObjectSettings ObjectType;
 	public float2 Position;
+	public float Procbability = 1f;
 }
 
 public static class ListUtil
