@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Room
   PotCount: 1
-  ChestSpawnProb: 0.33
   FirstWave: []
   SecondWave: []
   ThirdWave: []
