@@ -7,6 +7,7 @@ public class MobSettings : BattleObjectSettings
 	[Header("Mob Stuff")]
 	public float MovementSpeed;
 	public float AggroRange;
+	public float SpawnDuration = 0.5f;
 
 	[Header("Health")]
 	public float Health;
