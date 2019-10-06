@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameBooter : MonoBehaviour
 {
-    public GameWorldData LevelData;
-
     void Awake()
     {
+        var state = Game.GameState;
+        var levelData = Resources.Load<GameWorldData>($"LevelDesign/Level{state.Level}");
+
         Application.targetFrameRate = 60;
-        GameTicker.StartTicking(LevelData);
+        GameTicker.StartTicking(levelData);
     }
 }

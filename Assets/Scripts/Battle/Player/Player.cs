@@ -14,6 +14,7 @@ public class Player : Unit
     public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
     {
         PlayerSettings = settings;
+        SkillPoints = Game.GameState.SkillPoints;
     }
 
     float InertiaLol;
