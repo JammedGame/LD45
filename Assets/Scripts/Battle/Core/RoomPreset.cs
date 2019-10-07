@@ -8,7 +8,8 @@ using UnityEngine;
 public class RoomPreset : ScriptableObject
 {
 	public int PotCount;
-	
+
+	public bool DisableTorches;
 	public int FirstWaveGolems;
 	public int FirstWaveEyes;
 	public int SecondWaveGolems;
@@ -28,7 +29,7 @@ public class RoomPreset : ScriptableObject
 
 		// initial wave
 		room.SpawnWave(0);
-		
+
 		// pots
 		var positions = levelData.PotSpawnPoints.GetSpawnPoints(PotCount);
 		for(int i = 0; i < PotCount; i++)
@@ -86,7 +87,7 @@ public static class ListUtil
 
 			var posIndex = UnityEngine.Random.Range(0, bag.Count);
 			finalList.Add(bag[posIndex]);
-			bag.RemoveAt(posIndex);			
+			bag.RemoveAt(posIndex);
 		}
 
 		return finalList;

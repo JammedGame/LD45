@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Room3D : MonoBehaviour
 {
+	public List<GameObject> Torches;
+
 	public GameObject EastDoor;
 	public GameObject NorthDoor;
 	public GameObject WestDoor;
@@ -43,6 +46,13 @@ public class Room3D : MonoBehaviour
 		if(room.World.GameWorldData.LevelId == 3) instance.Floor.GetComponent<SpriteRenderer>().sprite = instance.Floor3;
 
 		instance.CheckDoors(room.CanProgressToNextRoom());
+
+		// randomize torches
+		instance.Torches.ForEach(torch => torch.SetActive(false));
+		if (!room.RoomData.DisableTorches)
+		{
+			instance.Torches.GetRandom().SetActive(true);
+		}
 
 		return instance;
 	}
