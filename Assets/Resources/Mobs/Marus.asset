@@ -26,8 +26,8 @@ MonoBehaviour:
   Health: 80
   AttackRange: 4
   AttackDuration: 1
-  AttackDamage: 0
-  AttackPush: 0
+  AttackDamage: 1
+  AttackPush: 3
   Projectile: {fileID: 11400000, guid: 386f20cea9ab07447b23beeafa87d472, type: 2}
   PatrollingDistance: 1.5
   PatrollingPause: 1
