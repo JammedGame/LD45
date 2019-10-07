@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232d7c7f8cbffed4fb7e91f4598c3171, type: 3}
+  m_Name: Eye3
+  m_EditorClassIdentifier: 
+  ColliderType: 1
+  Size:
+    x: 0.35
+    y: 0.4
+  IsStatic: 0
+  Density: 1
+  MovementSpeed: 15
+  AggroRange: 10
+  SpawnDuration: 0.5
+  Type: Basic
+  Minion: {fileID: 0}
+  Health: 2
+  AttackRange: 4
+  AttackDuration: 1.5
+  AttackDamage: 4
+  AttackPush: 0
+  Projectile: {fileID: 11400000, guid: 386f20cea9ab07447b23beeafa87d472, type: 2}
+  PatrollingDistance: 1.5
+  PatrollingPause: 1

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    public float DamageBonus;
+    public float HealthBonus;
+    public float MovementSpeedBonus;
     public readonly PlayerSettings PlayerSettings;
     public AnimationType CurrentAnimation;
 
@@ -13,12 +16,16 @@ public class Player : Unit
 
     public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
     {
+        this.DamageBonus = 0;
+        this.HealthBonus = 0;
+        this.MovementSpeedBonus = 0;
         PlayerSettings = settings;
         SkillPoints = Game.GameState.SkillPoints;
     }
-
+    public float TotalDamage() => PlayerSettings.Damage + DamageBonus;
+    public float TotalHealth() => PlayerSettings.Health + HealthBonus;
+    public float TotalSpeed() => PlayerSettings.MovementSpeed + MovementSpeedBonus;
     float InertiaLol;
-
     protected override void OnAct(float dT)
     {
         // a bit less intertia than other stuff
@@ -32,7 +39,7 @@ public class Player : Unit
         var movement = new float2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (movement.x != 0 || movement.y != 0)
         {
-            Velocity += normalize(movement) * PlayerSettings.MovementSpeed * dT;
+            Velocity += normalize(movement) * (PlayerSettings.MovementSpeed + this.MovementSpeedBonus) * dT;
             InertiaLol = TimeSinceInit + 0.15f;
             CurrentAnimation = AnimationType.Move;
         }
@@ -55,7 +62,7 @@ public class Player : Unit
             {
                 var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Room.Position3D;
                 var mousePos = float2(mousePos3D.x, mousePos3D.y);
-                FireProjectile(mousePos, PlayerSettings.Damage, PlayerSettings.Weapon1);
+                FireProjectile(mousePos, PlayerSettings.Damage + this.DamageBonus, PlayerSettings.Weapon1);
                 attackProgress = PlayerSettings.FireRateDuration;
             }
         }
@@ -86,9 +93,5 @@ public class Player : Unit
     {
         InertiaLol = 0;
         base.DealDamage(damage, source);
-    }
-
-    public void ShowAvailableUpgrades(){
-        
     }
 }

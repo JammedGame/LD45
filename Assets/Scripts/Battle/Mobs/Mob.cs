@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using Unity.Mathematics;
 using static Unity.Mathematics.math;
 
@@ -46,7 +47,7 @@ public class Mob : Unit
 		}
 	}
 
-    private void AttackAct(float dT)
+    protected virtual void AttackAct(float dT)
     {
 		CurrentAnimation = AnimationType.Attack;
 		if (AttackProgress <= 0)
@@ -127,5 +128,6 @@ public enum AnimationType
 	Idle = 0,
 	Move = 1,
 	Attack = 2,
-	Spawn = 3
+	Spawn = 3,
+	Minion = 4
 }

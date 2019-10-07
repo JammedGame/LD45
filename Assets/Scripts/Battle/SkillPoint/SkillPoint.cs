@@ -12,13 +12,14 @@ public class SkillPoint : BattleObject
     public override void OnCollisionWith(BattleObject other)
     {
         if(other is Player player) {
-            player.SkillPoints++;
-            if(player.SkillPoints==10) {
-                player.ShowAvailableUpgrades();
+            
+            if(player.Health < player.TotalHealth())
+            {
+                player.Health += 2;
+                if(player.Health > player.TotalHealth()) player.Health = player.TotalHealth();
             }
+            else player.SkillPoints++;
             this.Deactivate();
         }
-
     }
-
 }
