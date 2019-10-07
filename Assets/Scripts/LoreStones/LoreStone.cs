@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LoreStone : BattleObject
 {
+    public float Delay = 0;
     public readonly LoreStoneSettings LoreSettings;
 
     public bool isRead;
@@ -28,12 +29,15 @@ public class LoreStone : BattleObject
     {
         base.OnAct(dT);
 
+        Delay -= dT;
+        if(Delay > 0) return;
         if (DistanceToPlayer < 1 && Input.GetKeyDown(KeyCode.E))
         {
             Game.Player.LoreToTell = LoreSettings.Lore;
             isRead = true;
+            Delay = 0.8f;
         }
-        else
+        else 
         {
             isRead = false;
         }

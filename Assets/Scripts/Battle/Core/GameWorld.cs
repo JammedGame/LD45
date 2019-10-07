@@ -33,6 +33,7 @@ public class GameWorld
         roomPresets.Add(LoadRoomPreset("Pause"));
         roomPresets.AddRange(LoadPresets(11, 15));
         roomPresets.Add(LoadRoomPreset("Boss"));
+        roomPresets.Add(LoadRoomPreset("Organ"));
 
         foreach(var roomPreset in roomPresets)
         {
