@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
 using static Unity.Mathematics.math;
+
 public class Boss2 : Mob
 {
     private Room _Room;

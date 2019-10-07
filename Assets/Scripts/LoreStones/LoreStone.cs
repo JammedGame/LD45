@@ -6,7 +6,7 @@ using UnityEngine;
 public class LoreStone : BattleObject
 {
     public readonly LoreStoneSettings LoreSettings;
-    
+
     public bool isRead;
 
     public LoreStone(Room room, LoreStoneSettings settings, float2 position) : base(room, settings, OwnerId.Neutral, position)
@@ -17,10 +17,16 @@ public class LoreStone : BattleObject
 
     public override void OnCollisionWith(BattleObject other)
     {
-        if (other is Player player && Room.CanProgressToNextRoom())
+        if (other is Player player && Room.CanProgressToNextRoom() && !isRead)
         {
             player.LoreToTell = LoreSettings.Lore;
             isRead = true;
         }
+    }
+
+    protected override void OnAct(float dT)
+    {
+        base.OnAct(dT);
+        if (DistanceToPlayer > 1) isRead = false;
     }
 }
