@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a469077f59fed6a488f7d4d07ae026b3, type: 3}
-  m_Name: AltarEyes
+  m_Name: AltarStaff
   m_EditorClassIdentifier: 
   ColliderType: 2
   Size:
@@ -18,4 +18,4 @@ MonoBehaviour:
     y: 0.8
   IsStatic: 1
   Density: 1
-  Item: Eyes
+  Item: Staff
