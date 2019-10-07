@@ -28,6 +28,9 @@ public static class Game
 	{
 		GameState.Level++;
 		GameState.SkillPoints = Player.SkillPoints;
+		GameState.BonusDamage = Player.DamageBonus;
+		GameState.BonusHealth = Player.HealthBonus;
+		GameState.BonusSpeed = Player.MovementSpeedBonus;
 		SceneManager.LoadScene("Game");
 	}
 }
@@ -36,10 +39,16 @@ public class GameState
 {
 	public int Level = 1;
 	public int SkillPoints;
+	public float BonusDamage = -5;
+	public float BonusHealth;
+	public float BonusSpeed;
 
 	public void Reset()
 	{
 		Level = 1;
 		SkillPoints = 0;
+		BonusDamage = -5;
+		BonusHealth = 0;
+		BonusSpeed = 0;
 	}
 }

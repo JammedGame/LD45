@@ -8,6 +8,6 @@ public class HealthBar : MonoBehaviour
     public Image image;
 
     public void Update(){
-        image.fillAmount = Game.Player.Health/Game.Player.TotalHealth();
+        image.fillAmount = Game.Player.Health/Game.Player.TotalHealth;
     }
 }

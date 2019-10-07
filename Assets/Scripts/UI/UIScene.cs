@@ -25,8 +25,8 @@ public class UIScene : MonoBehaviour
         this.DamageUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 10);
         this.HealthUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 10);
         this.SpeedUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 10);
-        this.DamageText.text = (Game.Player.TotalDamage() * 5).ToString();
-        this.HealthText.text = (Game.Player.TotalHealth() / 2).ToString();
-        this.SpeedText.text = (Game.Player.TotalSpeed() / 15).ToString();
+        this.DamageText.text = (Game.Player.SkillDamage).ToString();
+        this.HealthText.text = (Game.Player.SkillHealth).ToString();
+        this.SpeedText.text = (Game.Player.SkillSpeed).ToString();
     }
 }

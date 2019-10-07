@@ -13,10 +13,10 @@ public class SkillPoint : BattleObject
     {
         if(other is Player player) {
             
-            if(player.Health < player.TotalHealth())
+            if(player.Health < player.TotalHealth)
             {
                 player.Health += 2;
-                if(player.Health > player.TotalHealth()) player.Health = player.TotalHealth();
+                if(player.Health > player.TotalHealth) player.Health = player.TotalHealth;
             }
             else player.SkillPoints++;
             this.Deactivate();
