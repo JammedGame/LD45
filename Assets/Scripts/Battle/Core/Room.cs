@@ -82,6 +82,15 @@ public class Room
 			if (unit.Owner == OwnerId.Enemy) return false;
 		}
 
+		foreach(var entry in AllObjects)
+		{
+			if(entry is Altar)
+			{
+				Altar A = entry as Altar;
+				if(!A.Complete) return false;
+			}
+		}
+
 		return true;
 	}
 
