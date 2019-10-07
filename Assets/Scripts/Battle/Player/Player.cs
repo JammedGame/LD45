@@ -8,6 +8,7 @@ public class Player : Unit
     public float DamageBonus;
     public float HealthBonus;
     public float MovementSpeedBonus;
+    public bool HasEyes;
     public readonly PlayerSettings PlayerSettings;
     public AnimationType CurrentAnimation;
     public float attackProgress;
@@ -21,6 +22,7 @@ public class Player : Unit
         this.DamageBonus = Game.GameState.BonusDamage;
         this.HealthBonus = Game.GameState.BonusHealth;
         this.MovementSpeedBonus = Game.GameState.BonusSpeed;
+        this.HasEyes = Game.GameState.HasEyes;
         PlayerSettings = settings;
         SkillPoints = Game.GameState.SkillPoints;
     }

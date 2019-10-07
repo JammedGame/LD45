@@ -224,3 +224,5 @@ MonoBehaviour:
     type: 3}
   OnDeathEffectDuration: 0.75
   Light2D: {fileID: 4735884309136826279}
+  NoEyesLightScale: 0.33
+  NoEyesLightIntensity: 0.5

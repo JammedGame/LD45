@@ -49,12 +49,15 @@ public class BattleObject3D : MonoBehaviour
 		newObject.Data = data;
 		newObject.Animator = newObject.gameObject.GetComponentInChildren<Animator>();
 		newObject.ViewController = viewController;
+		newObject.Init(data);
 		newObject.Sync(0);
 
 		if (newObject.Animator) newObject.Animator.logWarnings = false;
 
 		return newObject;
 	}
+
+	public virtual void Init(BattleObject data) {}
 
 	/// <summary>
 	/// Sync method to be executed each frame.
