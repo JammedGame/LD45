@@ -79,17 +79,18 @@ public class Player : Unit
     {
         if (Room.CanProgressToNextRoom())
         {
-            if (Room.NextRoom == null)
+            if (distance(Room.DoorPosition, Position) < 1)
             {
-                ReadyToGoToNextRoom = true;
-            }
-
-            if (Room.NextRoom != null
-                && distance(Room.DoorPosition, Position) < 1)
-            {
-                Room = Room.NextRoom;
-                Velocity = 0;
-                Position = Room.EntryPosition * 0.9f;
+                if (Room.NextRoom == null)
+                {
+                    ReadyToGoToNextRoom = true;
+                }
+                else
+                {
+                    Room = Room.NextRoom;
+                    Velocity = 0;
+                    Position = Room.EntryPosition * 0.9f;
+                }
             }
             else if (Room.PreviousRoom != null
                 && distance(Room.EntryPosition, Position) < 1)
