@@ -10,6 +10,10 @@ public class Room3D : MonoBehaviour
 	public GameObject NorthDoorLocked;
 	public GameObject WestDoorLocked;
 	public GameObject SouthDoorLocked;
+
+	public GameObject NextLevelDoor;
+	public GameObject NextLevelDoorLocked;
+
 	public GameObject Walls;
 	public Sprite Frame1;
 	public Sprite Frame2;
@@ -54,6 +58,9 @@ public class Room3D : MonoBehaviour
 			this.EastDoor.SetActive(room.NextRoom != null && room.NextRoom.X == room.X + 1);
 			this.WestDoor.SetActive(room.PreviousRoom != null && room.PreviousRoom.X == room.X - 1 );
 			this.SouthDoor.SetActive(room.PreviousRoom != null && room.PreviousRoom.Y == room.Y - 1);
+			this.NextLevelDoor.SetActive(room.NextRoom == null);
+
+			this.NextLevelDoorLocked.SetActive(false);
 			this.NorthDoorLocked.SetActive(false);
 			this.SouthDoorLocked.SetActive(false);
 			this.WestDoorLocked.SetActive(false);
@@ -65,6 +72,10 @@ public class Room3D : MonoBehaviour
 			this.EastDoorLocked.SetActive(room.NextRoom != null && room.NextRoom.X == room.X + 1);
 			this.WestDoorLocked.SetActive(room.PreviousRoom != null && room.PreviousRoom.X == room.X - 1 );
 			this.SouthDoorLocked.SetActive(room.PreviousRoom != null && room.PreviousRoom.Y == room.Y - 1);
+			this.NextLevelDoorLocked.SetActive(room.NextRoom == null);
+
+			this.NextLevelDoor.SetActive(false);
+			this.NorthDoor.SetActive(false);
 			this.NorthDoor.SetActive(false);
 			this.SouthDoor.SetActive(false);
 			this.WestDoor.SetActive(false);
