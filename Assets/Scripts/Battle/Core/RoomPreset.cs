@@ -42,7 +42,6 @@ public class RoomPreset : ScriptableObject
 		{
 			if (true || UnityEngine.Random.Range(0f, 1f) <= stuff.Procbability)
 			{
-				
 				var obj = stuff.ObjectType.SpawnIntoRoom(room, stuff.Position);
 				obj.WasPartOfTheRoom = true;
 			}
