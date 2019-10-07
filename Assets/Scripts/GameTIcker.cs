@@ -52,10 +52,6 @@ public class GameTicker : MonoBehaviour
 			Game.GoToNextLevel();
 		}
 
-		if ()
-		{
-
-		}
 
 		if(GameWorld.Player.LoreToTell!=null) {
 			logicPaused=true;
