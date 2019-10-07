@@ -14,6 +14,8 @@ public class Player : Unit
 
     public int SkillPoints;
 
+    public string LoreToTell;
+
     public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
     {
         this.DamageBonus = Game.GameState.BonusDamage;
