@@ -46,6 +46,10 @@ public class GameTicker : MonoBehaviour
 			logicPaused = true;
 		}
 
+		if(GameWorld.Player.LoreToTell!=null) {
+			logicPaused=true;
+		}
+
 		if (!logicPaused) GameWorld.Tick(dT);
 		ViewController.HandleViewEvents(GameWorld.ViewEventPipe);
 		ViewController.SyncEverything(dT);
