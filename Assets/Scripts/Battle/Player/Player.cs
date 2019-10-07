@@ -8,6 +8,7 @@ public class Player : Unit
     public float DamageBonus;
     public float HealthBonus;
     public float MovementSpeedBonus;
+    public bool HasEyes;
     public readonly PlayerSettings PlayerSettings;
     public AnimationType CurrentAnimation;
     public float attackProgress;
@@ -21,6 +22,7 @@ public class Player : Unit
         this.DamageBonus = Game.GameState.BonusDamage;
         this.HealthBonus = Game.GameState.BonusHealth;
         this.MovementSpeedBonus = Game.GameState.BonusSpeed;
+        this.HasEyes = Game.GameState.HasEyes;
         PlayerSettings = settings;
         SkillPoints = Game.GameState.SkillPoints;
     }
@@ -77,17 +79,18 @@ public class Player : Unit
     {
         if (Room.CanProgressToNextRoom())
         {
-            if (Room.NextRoom == null)
+            if (distance(Room.DoorPosition, Position) < 1)
             {
-                ReadyToGoToNextRoom = true;
-            }
-
-            if (Room.NextRoom != null
-                && distance(Room.DoorPosition, Position) < 1)
-            {
-                Room = Room.NextRoom;
-                Velocity = 0;
-                Position = Room.EntryPosition * 0.9f;
+                if (Room.NextRoom == null)
+                {
+                    ReadyToGoToNextRoom = true;
+                }
+                else
+                {
+                    Room = Room.NextRoom;
+                    Velocity = 0;
+                    Position = Room.EntryPosition * 0.9f;
+                }
             }
             else if (Room.PreviousRoom != null
                 && distance(Room.EntryPosition, Position) < 1)
