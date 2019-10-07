@@ -46,12 +46,20 @@ public class GameTicker : MonoBehaviour
 			logicPaused = true;
 		}
 
+		if (!Game.Player.IsActive)
+		{
+			RebootTimer += Time.deltaTime;
+			if (RebootTimer > 3f)
+			{
+				Game.Reboot();
+			}
+		}
+
 		if (GameWorld.Player.ReadyToGoToNextRoom)
 		{
 			logicPaused = true;
 			Game.GoToNextLevel();
 		}
-
 
 		if(GameWorld.Player.LoreToTell!=null) {
 			logicPaused=true;
@@ -61,6 +69,8 @@ public class GameTicker : MonoBehaviour
 		ViewController.HandleViewEvents(GameWorld.ViewEventPipe);
 		ViewController.SyncEverything(dT);
 	}
+
+	float RebootTimer;
 
 	private void UpdateCameraZoom()
 	{

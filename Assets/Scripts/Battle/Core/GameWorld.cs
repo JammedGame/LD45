@@ -51,6 +51,8 @@ public class GameWorld
         {
             Rooms[i].SetNextRoom(Rooms[i + 1]);
         }
+        Rooms[Rooms.Count - 1].SetNextRoom(null);
+
         for(int i = 1; i < Rooms.Count; i++)
         {
             Rooms[i].SetRoomBefore(Rooms[i - 1]);
@@ -80,8 +82,8 @@ public class GameWorld
 
         while(pool.Count > 0)
         {
-            var id = randomize 
-                ? pool[UnityEngine.Random.Range(0, pool.Count)] 
+            var id = randomize
+                ? pool[UnityEngine.Random.Range(0, pool.Count)]
                 : pool[0];
 
             pool.Remove(id);
@@ -89,6 +91,6 @@ public class GameWorld
         }
     }
 
-    public RoomPreset LoadRoomPreset(object id) => 
+    public RoomPreset LoadRoomPreset(object id) =>
         Resources.Load<RoomPreset>($"LevelDesign/Level{GameWorldData.LevelId}/Lvl{GameWorldData.LevelId}-{id}");
 }
