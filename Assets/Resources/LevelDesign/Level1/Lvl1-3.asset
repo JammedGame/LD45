@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Lvl1-3
   m_EditorClassIdentifier: 
   PotCount: 1
-  FirstWaveGolems: 2
-  FirstWaveEyes: 1
+  FirstWaveGolems: 1
+  FirstWaveEyes: 0
   SecondWaveGolems: 0
   SecondWaveEyes: 0
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
   StuffInRoom:
-  - ObjectType: {fileID: 11400000, guid: 7acad90d6c9bd4042af98feae0f88f2e, type: 2}
+  - ObjectType: {fileID: 11400000, guid: 12421f5b9c3bc1a438f3958edb89f0ee, type: 2}
     Position:
       x: 0
       y: 0
