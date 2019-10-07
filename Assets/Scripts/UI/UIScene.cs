@@ -22,9 +22,9 @@ public class UIScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.DamageUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 10);
-        this.HealthUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 10);
-        this.SpeedUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 10);
+        this.DamageUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 8);
+        this.HealthUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 8);
+        this.SpeedUpgrade.gameObject.SetActive(Game.Player.SkillPoints >= 8);
         this.DamageText.text = (Game.Player.SkillDamage).ToString();
         this.HealthText.text = (Game.Player.SkillHealth).ToString();
         this.SpeedText.text = (Game.Player.SkillSpeed).ToString();
