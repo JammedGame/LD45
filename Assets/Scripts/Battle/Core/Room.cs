@@ -45,7 +45,7 @@ public class Room
 		{
 			DoorPosition = new float2(0f, GameSettings.Instance.RoomHeight / 2f);
 		}
-		if (NextRoom.X == X + 1)
+		else if (NextRoom.X == X + 1)
 		{
 			DoorPosition = new float2(GameSettings.Instance.RoomWidth / 2f, 0f);
 		}
