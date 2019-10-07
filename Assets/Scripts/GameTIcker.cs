@@ -46,6 +46,12 @@ public class GameTicker : MonoBehaviour
 			logicPaused = true;
 		}
 
+		if (GameWorld.Player.ReadyToGoToNextRoom)
+		{
+			logicPaused = true;
+			Game.GoToNextLevel();
+		}
+
 		if(GameWorld.Player.LoreToTell!=null) {
 			logicPaused=true;
 		}
