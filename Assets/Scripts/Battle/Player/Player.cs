@@ -16,15 +16,18 @@ public class Player : Unit
 
     public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
     {
-        this.DamageBonus = 0;
-        this.HealthBonus = 0;
-        this.MovementSpeedBonus = 0;
+        this.DamageBonus = Game.GameState.BonusDamage;
+        this.HealthBonus = Game.GameState.BonusHealth;
+        this.MovementSpeedBonus = Game.GameState.BonusSpeed;
         PlayerSettings = settings;
         SkillPoints = Game.GameState.SkillPoints;
     }
-    public float TotalDamage() => PlayerSettings.Damage + DamageBonus;
-    public float TotalHealth() => PlayerSettings.Health + HealthBonus;
-    public float TotalSpeed() => PlayerSettings.MovementSpeed + MovementSpeedBonus;
+    public float TotalDamage => PlayerSettings.Damage + DamageBonus * 0.4f;
+    public float TotalHealth => PlayerSettings.Health + HealthBonus * 3;
+    public float TotalSpeed => PlayerSettings.MovementSpeed + MovementSpeedBonus * 15;
+    public float SkillDamage => PlayerSettings.Damage * 5 + DamageBonus;
+    public float SkillHealth => PlayerSettings.Health / 2 + HealthBonus;
+    public float SkillSpeed => PlayerSettings.MovementSpeed / 15 + MovementSpeedBonus;
     float InertiaLol;
     protected override void OnAct(float dT)
     {
@@ -39,7 +42,7 @@ public class Player : Unit
         var movement = new float2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (movement.x != 0 || movement.y != 0)
         {
-            Velocity += normalize(movement) * (PlayerSettings.MovementSpeed + this.MovementSpeedBonus) * dT;
+            Velocity += normalize(movement) * TotalSpeed * dT;
             InertiaLol = TimeSinceInit + 0.15f;
             CurrentAnimation = AnimationType.Move;
         }
@@ -55,14 +58,14 @@ public class Player : Unit
 
         // dummy bullet
         attackProgress -= dT;
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0)  && TotalDamage > 0)
         {
             CurrentAnimation = AnimationType.Attack;
             if (attackProgress <= 0f)
             {
                 var mousePos3D = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Room.Position3D;
                 var mousePos = float2(mousePos3D.x, mousePos3D.y);
-                FireProjectile(mousePos, PlayerSettings.Damage + this.DamageBonus, PlayerSettings.Weapon1);
+                FireProjectile(mousePos, TotalDamage, PlayerSettings.Weapon1);
                 attackProgress = PlayerSettings.FireRateDuration;
             }
         }

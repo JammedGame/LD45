@@ -19,6 +19,8 @@ public class Room
 	public float2 DoorPosition;
 	public float2 EntryPosition;
 	public int NextWave = 1;
+	public float SpawnTimer;
+	public bool SpawningWaveInProgress => SpawnTimer > 0;
 
 	public Room(GameWorld gameWorld, int x, int y, RoomPreset data)
 	{
@@ -70,6 +72,11 @@ public class Room
 
 	public bool CanProgressToNextRoom()
 	{
+		if (SpawningWaveInProgress)
+		{
+			return false;
+		}
+
 		foreach(var unit in AllUnits)
 		{
 			if (unit.Owner == OwnerId.Enemy) return false;
@@ -95,17 +102,30 @@ public class Room
 
 	public void Tick(float dT)
 	{
-		// spawn waves
-		if (CanProgressToNextRoom() && SpawnWave(NextWave))
-		{
-			NextWave++;
-		}
-
 		TickObjects(dT);
 		TickCollision(dT);
 		CleanUpDeadStuff();
+		DoSpawningStuff(dT);
 	}
-	public float SpawnTimer = 1f;
+
+	public void DoSpawningStuff(float dT)
+	{
+		if (SpawningWaveInProgress)
+		{
+			SpawnTimer -= dT;
+			if (SpawnTimer < 0f)
+			{
+				SpawnWave(NextWave);
+				NextWave++;
+			}
+		}
+
+		// spawn waves
+		if (CanProgressToNextRoom() && WaveExists(NextWave))
+		{
+			SpawnTimer = 1f;
+		}
+	}
 
 	private void TickObjects(float dT)
 	{
@@ -141,7 +161,19 @@ public class Room
 		}
 
 		return false;
-	}	
+	}
+
+	public bool WaveExists(int index)
+	{
+		switch(index)
+		{
+			case 0:	return FirstWave.Count > 0;
+			case 1: return SecondWave.Count > 0;
+			case 2:	return ThirdWave.Count > 0;
+		}
+
+		return false;
+	}
 
 	[NonSerialized] public List<MobSettings> FirstWave;
 	[NonSerialized] public List<MobSettings> SecondWave;
