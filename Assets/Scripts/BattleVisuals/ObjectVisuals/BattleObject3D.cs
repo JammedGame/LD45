@@ -68,7 +68,7 @@ public class BattleObject3D : MonoBehaviour
 	public void SyncFlip()
 	{
 		var sign = math.sign(Data.Velocity.x);
-		if (sign == 0) { return; }
+		if (sign == 0 || Data.Settings.IsStatic) { return; }
 
 		var scale = transform.localScale;
 		scale.x = math.abs(scale.x) * sign;
