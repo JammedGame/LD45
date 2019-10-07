@@ -15,16 +15,18 @@ MonoBehaviour:
   ColliderType: 2
   Size:
     x: 1
-    y: 1
+    y: 1.5
   IsStatic: 0
   Density: 1
   MovementSpeed: 5
   AggroRange: 8
   SpawnDuration: 0.5
-  Health: 15
+  Type: Boss1
+  Minion: {fileID: 11400000, guid: 7f3f54e7c626352429273bc85df32721, type: 2}
+  Health: 50
   AttackRange: 4
-  AttackDuration: 1.5
-  AttackDamage: 3
+  AttackDuration: 1
+  AttackDamage: 2
   AttackPush: 0
   Projectile: {fileID: 11400000, guid: 386f20cea9ab07447b23beeafa87d472, type: 2}
   PatrollingDistance: 1.5

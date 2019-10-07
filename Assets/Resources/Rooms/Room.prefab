@@ -401,12 +401,12 @@ MonoBehaviour:
   SouthDoor: {fileID: 1425855502020440083}
   Walls: {fileID: 461904392190715683}
   Frame1: {fileID: 21300000, guid: fe2a3915f43782e4eb2b19b30917fbb0, type: 3}
-  Frame2: {fileID: 21300000, guid: 0d8f7e9e60a8da547b4b52983dfbcd2b, type: 3}
-  Frame3: {fileID: 21300000, guid: 6aa209a423984934eb3bd7b5f6dc1d29, type: 3}
+  Frame2: {fileID: 21300000, guid: 6aa209a423984934eb3bd7b5f6dc1d29, type: 3}
+  Frame3: {fileID: 21300000, guid: 0d8f7e9e60a8da547b4b52983dfbcd2b, type: 3}
   Floor: {fileID: 6878299756540675449}
   Floor1: {fileID: 21300000, guid: 7e0948a83e8f67c40a543e74cfbda5c6, type: 3}
-  Floor2: {fileID: 21300000, guid: 5338e0699856b3a48851413bd1a533a2, type: 3}
-  Floor3: {fileID: 21300000, guid: 71df32e5eb3318941ac908c4aaf7fbc2, type: 3}
+  Floor2: {fileID: 21300000, guid: 71df32e5eb3318941ac908c4aaf7fbc2, type: 3}
+  Floor3: {fileID: 21300000, guid: 5338e0699856b3a48851413bd1a533a2, type: 3}
 --- !u!1 &3127728289239782444
 GameObject:
   m_ObjectHideFlags: 0
