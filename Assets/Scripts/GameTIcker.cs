@@ -9,6 +9,7 @@ public class GameTicker : MonoBehaviour
 	public Room3DController RoomController;
 	public BattleViewController ViewController;
 	public Camera Camera;
+	public float DefaultOrtographicSize;
 
 	/// <summary>
 	/// Creates a new game world and start ticking.
@@ -18,6 +19,7 @@ public class GameTicker : MonoBehaviour
 		var gameWorld = new GameWorld(levelData);
 		var newTicker = new GameObject("GameWorldTicker").AddComponent<GameTicker>();
 		newTicker.Camera = Camera.main;
+		newTicker.DefaultOrtographicSize = newTicker.Camera.orthographicSize;
 		newTicker.GameWorld = gameWorld;
 		newTicker.ViewController = new BattleViewController();
 		newTicker.RoomController = new Room3DController(gameWorld);
@@ -33,6 +35,8 @@ public class GameTicker : MonoBehaviour
 			return;
 		}
 
+		UpdateCameraZoom();
+
 		var dT = Time.deltaTime;
 		var logicPaused = false;
 
@@ -47,7 +51,22 @@ public class GameTicker : MonoBehaviour
 		ViewController.SyncEverything(dT);
 	}
 
-    private bool MoveCameraAround(float dT)
+	private void UpdateCameraZoom()
+	{
+		var aspectRatio = Screen.width / (float)Screen.height;
+		var referenceAspectRatio = 16f / 9f;
+
+		if (aspectRatio > referenceAspectRatio)
+		{
+			Camera.orthographicSize = DefaultOrtographicSize;
+		}
+		else
+		{
+			Camera.orthographicSize = DefaultOrtographicSize * referenceAspectRatio / aspectRatio;
+		}
+	}
+
+	private bool MoveCameraAround(float dT)
     {
         var cameraPos = Camera.transform.position;
 		var roomPos = GameWorld.Player.Room.Position3D + Vector3.up * 0.3f;
