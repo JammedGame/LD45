@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lvl1-Boss
   m_EditorClassIdentifier: 
   PotCount: 4
+  DisableTorches: 0
   FirstWaveGolems: 0
   FirstWaveEyes: 2
   SecondWaveGolems: 0
