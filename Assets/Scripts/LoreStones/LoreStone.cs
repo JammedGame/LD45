@@ -19,7 +19,7 @@ public class LoreStone : BattleObject
     {
         if (other is Player player && Room.CanProgressToNextRoom() && !isRead)
         {
-            player.LoreToTell = LoreSettings.Lore;
+
             isRead = true;
         }
     }
@@ -27,6 +27,16 @@ public class LoreStone : BattleObject
     protected override void OnAct(float dT)
     {
         base.OnAct(dT);
-        if (DistanceToPlayer > 1) isRead = false;
+
+        if (DistanceToPlayer < 1 && Input.GetKeyDown(KeyCode.E))
+        {
+            Game.Player.LoreToTell = LoreSettings.Lore;
+            isRead = true;
+        }
+        else
+        {
+            isRead = false;
+        }
     }
+
 }
