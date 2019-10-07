@@ -6,7 +6,7 @@ using UnityEngine;
 public class LoreStone : BattleObject
 {
     public readonly LoreStoneSettings LoreSettings;
-
+    
     public bool isRead;
 
     public LoreStone(Room room, LoreStoneSettings settings, float2 position) : base(room, settings, OwnerId.Neutral, position)
