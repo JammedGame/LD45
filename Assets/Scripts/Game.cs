@@ -23,7 +23,7 @@ public static class Game
 
 	[ExecutableCommand]
 #if UNITY_EDITOR
-	[UnityEditor.MenuItem("Game/Skip To End Level _F02")]
+	[UnityEditor.MenuItem("Game/Skip To End Level _F2")]
 #endif
 	public static void SkipToFinalRoom()
 	{
@@ -33,7 +33,7 @@ public static class Game
 
 	[ExecutableCommand]
 #if UNITY_EDITOR
-	[UnityEditor.MenuItem("Game/Kill Everything _F03")]
+	[UnityEditor.MenuItem("Game/Kill Everything _F3")]
 #endif
 	public static void KillEverything()
 	{
