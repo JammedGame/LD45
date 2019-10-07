@@ -11,4 +11,12 @@ public class LoreStone : BattleObject
     {
         LoreSettings = settings;
     }
+
+    public override void OnCollisionWith(BattleObject other)
+    {
+        if (other is Player && Room.CanProgressToNextRoom())
+        {
+            // do stuff
+        }
+    }
 }
