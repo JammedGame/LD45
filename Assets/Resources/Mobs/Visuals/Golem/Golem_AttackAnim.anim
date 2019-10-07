@@ -22,7 +22,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 10310f3ed02a74145ae9859357a4b348, type: 3}
     - time: 0.6666667
-      value: {fileID: 21300000, guid: 6e096699d9a2046479ac6c5d51087892, type: 3}
+      value: {fileID: 21300000, guid: e84245578f938b645a9df1241cbaad59, type: 3}
     attribute: m_Sprite
     path: GolemSprite
     classID: 212
@@ -43,7 +43,7 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: 10310f3ed02a74145ae9859357a4b348, type: 3}
-    - {fileID: 21300000, guid: 6e096699d9a2046479ac6c5d51087892, type: 3}
+    - {fileID: 21300000, guid: e84245578f938b645a9df1241cbaad59, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
