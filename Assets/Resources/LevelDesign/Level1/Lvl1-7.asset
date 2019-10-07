@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3059ec8ec971b46ad43ea0f98736e8, type: 3}
   m_Name: Lvl1-7
   m_EditorClassIdentifier: 
-  Name: Room
   PotCount: 2
   FirstWaveGolems: 1
   FirstWaveEyes: 0
@@ -20,4 +19,9 @@ MonoBehaviour:
   SecondWaveEyes: 5
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
-  StuffInRoom: []
+  StuffInRoom:
+  - ObjectType: {fileID: 11400000, guid: 8726840f52bdd224c819acefc7e7477e, type: 2}
+    Position:
+      x: 0
+      y: 0
+    Procbability: 0

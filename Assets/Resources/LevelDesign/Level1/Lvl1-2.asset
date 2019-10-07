@@ -19,4 +19,9 @@ MonoBehaviour:
   SecondWaveEyes: 0
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
-  StuffInRoom: []
+  StuffInRoom:
+  - ObjectType: {fileID: 11400000, guid: 29c007e51fd9ebe438a59ef0339165a5, type: 2}
+    Position:
+      x: 0
+      y: 0
+    Procbability: 0

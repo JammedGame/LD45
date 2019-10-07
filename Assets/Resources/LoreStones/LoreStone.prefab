@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5534256294045591856}
   - component: {fileID: 4892548147952064050}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: LoreStoneSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f414e42491153af45a49ae665b4b79c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e28f99e6d0889c449bf5a0652741c17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7171467578430852150}
   - component: {fileID: 6731528124039235618}
   m_Layer: 0
-  m_Name: Chest
+  m_Name: LoreStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,3 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathAnimationDuration: 0
+  OnDeathEffect: {fileID: 0}
+  OnDeathEffectDuration: 0
