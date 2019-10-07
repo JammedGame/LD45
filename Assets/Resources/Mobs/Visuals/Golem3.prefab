@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d44072ff6fa3fc428abc8f2eb031a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61a849cfc868a604c8dc39635bc25b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7950252775396756988}
   - component: {fileID: 9089611431908064113}
   m_Layer: 0
-  m_Name: Golem2
+  m_Name: Golem3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 5653473700925825343}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4239677bb516e674d910f480ca42afbc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6a3dcda4070df574db0bd9d98ce0504d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

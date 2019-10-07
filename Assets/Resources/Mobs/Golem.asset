@@ -20,10 +20,13 @@ MonoBehaviour:
   Density: 1
   MovementSpeed: 7
   AggroRange: 4
+  SpawnDuration: 0.5
+  Type: Basic
+  Minion: {fileID: 0}
   Health: 2
   AttackRange: 1
   AttackDuration: 1.5
-  AttackDamage: 1
+  AttackDamage: 2
   AttackPush: 0.25
   Projectile: {fileID: 0}
   PatrollingDistance: 1.5
