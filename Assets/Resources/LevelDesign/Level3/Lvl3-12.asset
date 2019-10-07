@@ -18,5 +18,5 @@ MonoBehaviour:
   SecondWaveGolems: 0
   SecondWaveEyes: 4
   ThirdWaveGolems: 2
-  ThirdWaveEyes: 0
+  ThirdWaveEyes: 4
   StuffInRoom: []

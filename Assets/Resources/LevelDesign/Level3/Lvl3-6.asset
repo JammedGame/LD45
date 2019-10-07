@@ -15,8 +15,8 @@ MonoBehaviour:
   PotCount: 3
   FirstWaveGolems: 2
   FirstWaveEyes: 2
-  SecondWaveGolems: 0
-  SecondWaveEyes: 0
+  SecondWaveGolems: 2
+  SecondWaveEyes: 2
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
   StuffInRoom: []

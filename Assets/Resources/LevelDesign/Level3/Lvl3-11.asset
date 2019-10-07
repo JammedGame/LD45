@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Lvl3-11
   m_EditorClassIdentifier: 
   PotCount: 4
-  FirstWaveGolems: 6
+  FirstWaveGolems: 4
   FirstWaveEyes: 0
-  SecondWaveGolems: 0
+  SecondWaveGolems: 5
   SecondWaveEyes: 0
-  ThirdWaveGolems: 0
+  ThirdWaveGolems: 6
   ThirdWaveEyes: 0
   StuffInRoom: []

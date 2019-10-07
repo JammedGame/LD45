@@ -14,14 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PotCount: 2
   FirstWaveGolems: 0
-  FirstWaveEyes: 0
+  FirstWaveEyes: 3
   SecondWaveGolems: 0
   SecondWaveEyes: 0
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
-  StuffInRoom:
-  - ObjectType: {fileID: 11400000, guid: 4202eac37b862c140a5293f756498ac8, type: 2}
-    Position:
-      x: 0
-      y: 0
-    Procbability: 0
+  StuffInRoom: []

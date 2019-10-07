@@ -19,7 +19,7 @@ MonoBehaviour:
   IsStatic: 0
   Density: 1
   MovementSpeed: 13
-  AggroRange: 8
+  AggroRange: 9
   SpawnDuration: 0.5
   Type: Basic
   Minion: {fileID: 0}

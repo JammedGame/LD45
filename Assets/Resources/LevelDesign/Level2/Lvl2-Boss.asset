@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Lvl2-Boss
   m_EditorClassIdentifier: 
   PotCount: 4
-  FirstWaveGolems: 0
+  FirstWaveGolems: 2
   FirstWaveEyes: 0
   SecondWaveGolems: 0
   SecondWaveEyes: 0
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
   StuffInRoom:
-  - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+  - ObjectType: {fileID: 11400000, guid: 4202eac37b862c140a5293f756498ac8, type: 2}
     Position:
       x: 0
       y: 0

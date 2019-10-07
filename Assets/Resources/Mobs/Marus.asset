@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColliderType: 2
   Size:
-    x: 1
-    y: 1.5
-  IsStatic: 0
+    x: 1.5
+    y: 1.8
+  IsStatic: 1
   Density: 1
   MovementSpeed: 0
-  AggroRange: 8
+  AggroRange: 15
   SpawnDuration: 0.5
   Type: Boss2
   Minion: {fileID: 11400000, guid: 7c4e2aa358d785a4b8c387b8d0da30e2, type: 2}
