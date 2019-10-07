@@ -6,18 +6,16 @@ using static Unity.Mathematics.math;
 
 public class Boss2 : Mob
 {
-    private Room _Room;
     private float _SpawnProgress;
     public Boss2(MobSettings mobSettings, Room room, float2 position) : base(mobSettings, room, position)
 	{
-        this._Room = room;
 	}
     public override Projectile FireProjectile(float2 position, float damage, ProjectileSettings projectileType)
 	{
-		var projectile1 = new Projectile(Room, damage, projectileType, this, new Vector2(Position.x - 1.5f, Position.y));
-		projectile1.DirectAt(new Vector2(position.x - 1.5f, position.y));
-        var projectile2 = new Projectile(Room, damage, projectileType, this, new Vector2(Position.x + 1.6f, Position.y));
-		projectile2.DirectAt(new Vector2(position.x + 1.6f, position.y));
+		var projectile1 = new Projectile(Room, damage, projectileType, this, new float2(Position.x - 1.5f, Position.y));
+		projectile1.DirectAt(new float2(position.x - 1.5f, position.y));
+        var projectile2 = new Projectile(Room, damage, projectileType, this, new float2(Position.x + 1.6f, Position.y));
+		projectile2.DirectAt(new float2(position.x + 1.6f, position.y));
 		return projectile1;
 	}
     protected override void OnAct(float dT)
@@ -31,7 +29,15 @@ public class Boss2 : Mob
 		Velocity *= 0.98f;
 		AttackProgress -= dT;
         _SpawnProgress -= dT;
+
+        // odmrsti se
+        if (_SpawnProgress < 4f)
+        {
+            CurrentAnimation = AnimationType.Idle;
+        }
+
         if(_SpawnProgress > 0) return;
+
 		var distanceToPlayer = DistanceToPlayer;
 		if(UnityEngine.Random.Range(0f, 1f) < 0.8f)
         {
@@ -41,11 +47,14 @@ public class Boss2 : Mob
         {
             // BEAMS
         }
+
+        // mrsti se
+        CurrentAnimation = AnimationType.Minion;
 	}
     private void Spawn()
     {
         _SpawnProgress = 5;
         CurrentAnimation = AnimationType.Minion;
-        MobSettings.Minion.SpawnIntoRoom(this._Room, new Vector2(Position.x, Position.y - 2f));
+        MobSettings.Minion.SpawnIntoRoom(Room, new float2(Position.x, Position.y - 2f));
     }
 }
