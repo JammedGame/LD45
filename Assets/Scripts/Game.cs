@@ -57,6 +57,7 @@ public static class Game
 		GameState.BonusDamage = Player.DamageBonus;
 		GameState.BonusHealth = Player.HealthBonus;
 		GameState.BonusSpeed = Player.MovementSpeedBonus;
+		GameState.HasEyes = Player.HasEyes;
 		SceneManager.LoadScene("Game");
 	}
 
@@ -79,6 +80,7 @@ public class GameState
 	public float BonusDamage = -5;
 	public float BonusHealth;
 	public float BonusSpeed;
+	public bool HasEyes;
 
 	public void Reset()
 	{
@@ -87,5 +89,6 @@ public class GameState
 		BonusDamage = -5;
 		BonusHealth = 0;
 		BonusSpeed = 0;
+		HasEyes = false;
 	}
 }

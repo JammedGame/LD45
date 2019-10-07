@@ -7,9 +7,12 @@ public class LoreStone : BattleObject
 {
     public readonly LoreStoneSettings LoreSettings;
 
+    public bool isRead;
+
     public LoreStone(Room room, LoreStoneSettings settings, float2 position) : base(room, settings, OwnerId.Neutral, position)
     {
         LoreSettings = settings;
+        isRead = settings.isRead;
     }
 
     public override void OnCollisionWith(BattleObject other)
@@ -17,7 +20,7 @@ public class LoreStone : BattleObject
         if (other is Player player && Room.CanProgressToNextRoom())
         {
             player.LoreToTell = LoreSettings.Lore;
-            
+            isRead = true;
         }
     }
 }
