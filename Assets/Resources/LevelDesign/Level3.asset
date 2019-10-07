@@ -38,6 +38,6 @@ MonoBehaviour:
     y: 3
   Pot: {fileID: 11400000, guid: b8878cd7b66e56c4ab05ded858fde81b, type: 2}
   Eye: {fileID: 11400000, guid: aa6cef716a1c97d4ca52db0738d44864, type: 2}
-  Golem: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+  Golem: {fileID: 11400000, guid: 736a829238625434dbae96b24712a88b, type: 2}
   Chest: {fileID: 11400000, guid: 0e41030280ea0434f871fc52a4ab8205, type: 2}
   ChestSpawnProb: 0.4

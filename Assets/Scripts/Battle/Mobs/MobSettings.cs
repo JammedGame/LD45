@@ -9,7 +9,7 @@ public class MobSettings : BattleObjectSettings
 	public float AggroRange;
 	public float SpawnDuration = 0.5f;
 	public string Type = "Basic";
-	
+
 	[Header("Boss Stuff")]
 	public BattleObjectSettings Minion;
 
@@ -32,6 +32,7 @@ public class MobSettings : BattleObjectSettings
 	public override BattleObject SpawnIntoRoom(Room room, float2 position)
 	{
 		if(this.Type == "Boss1") return new Boss1(this, room, position);
+		if(this.Type == "Boss2") return new Boss2(this, room, position);
 		return new Mob(this, room, position);
 	}
 }
