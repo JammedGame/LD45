@@ -40,8 +40,9 @@ public class RoomPreset : ScriptableObject
 		// fixed stuff
 		foreach(var stuff in StuffInRoom)
 		{
-			if (UnityEngine.Random.Range(0f, 1f) <= stuff.Procbability)
+			if (true || UnityEngine.Random.Range(0f, 1f) <= stuff.Procbability)
 			{
+				
 				var obj = stuff.ObjectType.SpawnIntoRoom(room, stuff.Position);
 				obj.WasPartOfTheRoom = true;
 			}
