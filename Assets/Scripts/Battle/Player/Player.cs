@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    public bool ReadyToGoToNextRoom;
     public float DamageBonus;
     public float HealthBonus;
     public float MovementSpeedBonus;
     public readonly PlayerSettings PlayerSettings;
     public AnimationType CurrentAnimation;
-
     public float attackProgress;
 
     public int SkillPoints;
@@ -77,6 +77,11 @@ public class Player : Unit
     {
         if (Room.CanProgressToNextRoom())
         {
+            if (Room.NextRoom == null)
+            {
+                ReadyToGoToNextRoom = true;
+            }
+
             if (Room.NextRoom != null
                 && distance(Room.DoorPosition, Position) < 1)
             {
