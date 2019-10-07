@@ -200,7 +200,7 @@ public abstract class BattleObject
 
 	#region Projectiles
 
-	public Projectile FireProjectile(float2 position, float damage, ProjectileSettings projectileType)
+	public virtual Projectile FireProjectile(float2 position, float damage, ProjectileSettings projectileType)
 	{
 		var projectile = new Projectile(Room, damage, projectileType, this, Position);
 		projectile.DirectAt(position);

@@ -26,8 +26,8 @@ public class GameWorld
 
         // do the rooms
         var roomPresets = new List<RoomPreset>();
-        roomPresets.Add(LoadRoomPreset("1")); // first level always fixed
-        roomPresets.AddRange(LoadPresets(2, 5, randomize: levelData.LevelId > 1));
+        if(levelData.LevelId > 1) roomPresets.Add(LoadRoomPreset("Pause")); // first level always fixed
+        roomPresets.AddRange(LoadPresets(1, 5, randomize: levelData.LevelId > 1));
         roomPresets.Add(LoadRoomPreset("Pause"));
         roomPresets.AddRange(LoadPresets(6, 10));
         roomPresets.Add(LoadRoomPreset("Pause"));
