@@ -23,6 +23,31 @@ public static class Game
 
 	[ExecutableCommand]
 #if UNITY_EDITOR
+	[UnityEditor.MenuItem("Game/Skip To End Level _F02")]
+#endif
+	public static void SkipToFinalRoom()
+	{
+		var allRooms = Game.Player.Room.World.Rooms;
+		Game.Player.Room = allRooms[allRooms.Count - 1];
+	}
+
+	[ExecutableCommand]
+#if UNITY_EDITOR
+	[UnityEditor.MenuItem("Game/Kill Everything _F03")]
+#endif
+	public static void KillEverything()
+	{
+		foreach(var unit in Game.Player.Room.AllObjects)
+		{
+			if (unit.Owner == OwnerId.Enemy)
+			{
+				unit.Deactivate();
+			}
+		}
+	}
+
+	[ExecutableCommand]
+#if UNITY_EDITOR
 	[UnityEditor.MenuItem("Game/GoToNextLevel _F11")]
 #endif
 	public static void GoToNextLevel()

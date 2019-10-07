@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -40,17 +39,15 @@ public class Room
 
 	public void SetNextRoom(Room nextRoom)
 	{
-		if (nextRoom == null) return;
-
 		NextRoom = nextRoom;
 
+		if (NextRoom == null || NextRoom.Y == Y + 1)
+		{
+			DoorPosition = new float2(0f, GameSettings.Instance.RoomHeight / 2f);
+		}
 		if (NextRoom.X == X + 1)
 		{
 			DoorPosition = new float2(GameSettings.Instance.RoomWidth / 2f, 0f);
-		}
-		else if (NextRoom.Y == Y + 1)
-		{
-			DoorPosition = new float2(0f, GameSettings.Instance.RoomHeight / 2f);
 		}
 	}
 
