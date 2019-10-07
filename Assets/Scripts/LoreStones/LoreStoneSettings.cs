@@ -7,6 +7,7 @@ using UnityEngine;
 public class LoreStoneSettings : BattleObjectSettings
 {
     [TextArea] public string Lore;
+    public bool isRead;
 
     public override string VisualsPath => "LoreStones/LoreStone";
 
