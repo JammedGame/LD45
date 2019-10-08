@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ebe86c212dae645b58b7814f35dd6e, type: 3}
+  m_Name: Lore15
+  m_EditorClassIdentifier: 
+  ColliderType: 1
+  Size:
+    x: 0.5
+    y: 0.5
+  IsStatic: 1
+  Density: 1
+  Lore: "Mighty battle-mage Norius was bested only once in battle, by the dark master
+    himself. Even though he was named commander of the Master\u2019s legions, he
+    was also stuck with the title of the Second, something that boastful warrior
+    never forgot, nor forgave. Long before their final confrontation, Norius coveted
+    revenge. Yet, there was no satisfaction to be found in his victory. The fact
+    that their combined power was barely enough to defeat their mentor drove Norius
+    further into madness. His new body was hence made as a perfect instrument of
+    death, and battle-starved Norius yearns for a new chance to prove himself."
+  isRead: 0

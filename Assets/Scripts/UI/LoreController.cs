@@ -15,7 +15,9 @@ public class LoreController : MonoBehaviour
             Panel.SetActive(true);
             LoreText.text = Game.Player.LoreToTell;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) ||
+                Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
+                Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             {
                 Game.Player.LoreToTell = null;
             }

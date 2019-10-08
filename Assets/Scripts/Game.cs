@@ -77,7 +77,7 @@ public class GameState
 {
 	public int Level = 1;
 	public int SkillPoints;
-	public float BonusDamage = -5;
+	public float BonusDamage = 0;
 	public float BonusHealth;
 	public float BonusSpeed;
 	public bool HasEyes;
@@ -86,7 +86,7 @@ public class GameState
 	{
 		Level = 1;
 		SkillPoints = 0;
-		BonusDamage = -5;
+		BonusDamage = 0;
 		BonusHealth = 0;
 		BonusSpeed = 0;
 		HasEyes = false;

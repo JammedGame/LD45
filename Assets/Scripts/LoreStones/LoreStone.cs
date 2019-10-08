@@ -16,30 +16,22 @@ public class LoreStone : BattleObject
         isRead = settings.isRead;
     }
 
-    public override void OnCollisionWith(BattleObject other)
-    {
-        if (other is Player player && Room.CanProgressToNextRoom() && !isRead)
-        {
-
-            isRead = true;
-        }
-    }
-
     protected override void OnAct(float dT)
     {
         base.OnAct(dT);
 
         Delay -= dT;
+        Debug.Log(1);
         if(Delay > 0) return;
-        if (DistanceToPlayer < 1 && Input.GetKeyDown(KeyCode.E))
+        if (DistanceToPlayer < 1)
         {
             Game.Player.LoreToTell = LoreSettings.Lore;
-            isRead = true;
-            Delay = 0.8f;
+            Delay = 0.3f;
         }
-        else 
+        else
         {
-            isRead = false;
+            Game.Player.LoreToTell = null;
+            Delay = 0.3f;
         }
     }
 

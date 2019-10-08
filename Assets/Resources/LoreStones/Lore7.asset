@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ebe86c212dae645b58b7814f35dd6e, type: 3}
+  m_Name: Lore7
+  m_EditorClassIdentifier: 
+  ColliderType: 1
+  Size:
+    x: 0.5
+    y: 0.5
+  IsStatic: 1
+  Density: 1
+  Lore: 'Things that strayed from light should be kept underground.  An endless maze
+    for the body, soul and mind. Organs scattered, life essence locked away, every
+    mention of their name erased. May their cursed souls find no rest, sentenced
+    to a limbo between planes of reality, capable only of perceiving the passage
+    of eons. '
+  isRead: 0
