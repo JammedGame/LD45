@@ -129,5 +129,7 @@ public enum AnimationType
 	Move = 1,
 	Attack = 2,
 	Spawn = 3,
-	Minion = 4
+	Minion = 4,
+	AttackPrepare = 5,
+	AttackFinishing = 6
 }

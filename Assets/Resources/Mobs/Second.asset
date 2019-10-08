@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 232d7c7f8cbffed4fb7e91f4598c3171, type: 3}
-  m_Name: Marus
+  m_Name: Second
   m_EditorClassIdentifier: 
   ColliderType: 2
   Size:
@@ -21,12 +21,12 @@ MonoBehaviour:
   MovementSpeed: 0
   AggroRange: 15
   SpawnDuration: 0.5
-  Type: Boss2
-  Minion: {fileID: 11400000, guid: 7c4e2aa358d785a4b8c387b8d0da30e2, type: 2}
-  Health: 120
+  Type: Boss3
+  Minion: {fileID: 11400000, guid: 736a829238625434dbae96b24712a88b, type: 2}
+  Health: 240
   AttackRange: 4
-  AttackDuration: 1
-  AttackDamage: 5
+  AttackDuration: 0.1
+  AttackDamage: 2
   AttackPush: 2
   Projectile: {fileID: 11400000, guid: 386f20cea9ab07447b23beeafa87d472, type: 2}
   PatrollingDistance: 1.5

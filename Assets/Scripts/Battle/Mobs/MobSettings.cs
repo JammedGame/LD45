@@ -33,6 +33,7 @@ public class MobSettings : BattleObjectSettings
 	{
 		if(this.Type == "Boss1") return new Boss1(this, room, position);
 		if(this.Type == "Boss2") return new Boss2(this, room, position);
+		if(this.Type == "Boss3") return new Boss3(this, room, position);
 		return new Mob(this, room, position);
 	}
 }

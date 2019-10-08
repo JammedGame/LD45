@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lvl3-Boss
   m_EditorClassIdentifier: 
   PotCount: 4
+  DisableTorches: 0
   FirstWaveGolems: 0
   FirstWaveEyes: 0
   SecondWaveGolems: 0
@@ -20,8 +21,8 @@ MonoBehaviour:
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
   StuffInRoom:
-  - ObjectType: {fileID: 11400000, guid: 0c1355098b1f6ff4c82ad5e718a3a766, type: 2}
+  - ObjectType: {fileID: 11400000, guid: d93e87fe8e3e15c4fb57bc609279fefa, type: 2}
     Position:
       x: 0
-      y: 0
+      y: 3
     Procbability: 0

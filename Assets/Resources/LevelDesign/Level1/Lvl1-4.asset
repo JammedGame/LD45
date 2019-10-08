@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lvl1-4
   m_EditorClassIdentifier: 
   PotCount: 1
-  DisableTorches: 0
+  DisableTorches: 1
   FirstWaveGolems: 0
   FirstWaveEyes: 3
   SecondWaveGolems: 0
