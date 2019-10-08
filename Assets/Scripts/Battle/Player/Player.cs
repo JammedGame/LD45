@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    public int GearState;
     public bool ReadyToGoToNextRoom;
     public float DamageBonus;
     public float HealthBonus;
@@ -21,6 +22,7 @@ public class Player : Unit
 
     public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
     {
+        this.GearState = Game.GameState.GearState;
         this.DamageBonus = Game.GameState.BonusDamage;
         this.HealthBonus = Game.GameState.BonusHealth;
         this.MovementSpeedBonus = Game.GameState.BonusSpeed;

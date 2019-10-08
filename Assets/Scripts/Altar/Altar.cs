@@ -18,10 +18,18 @@ public class Altar : BattleObject
 		if (!Complete && other is Player player)
 		{
 			Complete = true;
-            if(AltarSettings.Item == "Staff") player.DamageBonus += 5;
+            if(AltarSettings.Item == "Staff")
+            {
+                player.GearState--;
+                player.DamageBonus += 5;
+            }
             if(AltarSettings.Item == "Lungs") player.MovementSpeedBonus += 3;
             if(AltarSettings.Item == "Liver") player.DamageBonus += 3;
-            if(AltarSettings.Item == "Eyes") player.HasEyes = true;
+            if(AltarSettings.Item == "Eyes")
+            {
+                player.GearState--;
+                player.HasEyes = true;
+            }
             player.DialogToTell = AltarSettings.DialogToTell;
 		}
         

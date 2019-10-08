@@ -60,6 +60,7 @@ public static class Game
 		}
 		else
 		{
+			GameState.GearState = Player.GearState;
 			GameState.SkillPoints = Player.SkillPoints;
 			GameState.BonusDamage = Player.DamageBonus;
 			GameState.BonusHealth = Player.HealthBonus;
@@ -84,6 +85,7 @@ public static class Game
 public class GameState
 {
 	public int Level = 1;
+	public int GearState = 2;
 	public int SkillPoints;
 	public float BonusDamage = -5;
 	public float BonusHealth;
@@ -93,6 +95,7 @@ public class GameState
 	public void Reset()
 	{
 		Level = 1;
+		GearState = 2;
 		SkillPoints = 0;
 		BonusDamage = -5;
 		BonusHealth = 0;

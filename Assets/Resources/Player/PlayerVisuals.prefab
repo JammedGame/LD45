@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7171467578430852150}
   - component: {fileID: 4590977138917292171}
-  - component: {fileID: 3725826968450886425}
+  - component: {fileID: 4634382017647305957}
   m_Layer: 0
   m_Name: PlayerVisuals
   m_TagString: Untagged
@@ -207,7 +207,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3725826968450886425
+--- !u!114 &4634382017647305957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
