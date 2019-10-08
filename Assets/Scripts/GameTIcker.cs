@@ -5,102 +5,109 @@ using UnityEngine;
 
 public class GameTicker : MonoBehaviour
 {
-	public GameWorld GameWorld;
-	public Room3DController RoomController;
-	public BattleViewController ViewController;
-	public Camera Camera;
-	public float DefaultOrtographicSize;
+    public GameWorld GameWorld;
+    public Room3DController RoomController;
+    public BattleViewController ViewController;
+    public Camera Camera;
+    public float DefaultOrtographicSize;
 
-	/// <summary>
-	/// Creates a new game world and start ticking.
-	/// </summary>
-	public static GameTicker StartTicking(GameWorldData levelData)
-	{
-		var gameWorld = new GameWorld(levelData);
-		var newTicker = new GameObject("GameWorldTicker").AddComponent<GameTicker>();
-		newTicker.Camera = Camera.main;
-		newTicker.DefaultOrtographicSize = newTicker.Camera.orthographicSize;
-		newTicker.GameWorld = gameWorld;
-		newTicker.ViewController = new BattleViewController();
-		newTicker.RoomController = new Room3DController(gameWorld);
-		Game.ActiveGame = newTicker;
-		return newTicker;
-	}
+    /// <summary>
+    /// Creates a new game world and start ticking.
+    /// </summary>
+    public static GameTicker StartTicking(GameWorldData levelData)
+    {
+        var gameWorld = new GameWorld(levelData);
+        var newTicker = new GameObject("GameWorldTicker").AddComponent<GameTicker>();
+        newTicker.Camera = Camera.main;
+        newTicker.DefaultOrtographicSize = newTicker.Camera.orthographicSize;
+        newTicker.GameWorld = gameWorld;
+        newTicker.ViewController = new BattleViewController();
+        newTicker.RoomController = new Room3DController(gameWorld);
+        Game.ActiveGame = newTicker;
+        return newTicker;
+    }
 
-	void Update()
-	{
-		if (GameWorld == null)
-		{
-			Game.Reboot();
-			return;
-		}
+    void Update()
+    {
+        if (GameWorld == null)
+        {
+            Game.Reboot();
+            return;
+        }
 
-		UpdateCameraZoom();
+        UpdateCameraZoom();
 
-		var dT = Time.deltaTime;
-		var logicPaused = false;
+        var dT = Time.deltaTime;
+        var logicPaused = false;
 
-		if (MoveCameraAround(dT))
-		{
-			// don't update stuff while moving camera
-			logicPaused = true;
-		}
+        if (MoveCameraAround(dT))
+        {
+            // don't update stuff while moving camera
+            logicPaused = true;
+        }
 
-		if (!Game.Player.IsActive)
-		{
-			RebootTimer += Time.deltaTime;
-			if (RebootTimer > 3f)
-			{
-				Game.Reboot();
-			}
-		}
+        if (!Game.Player.IsActive)
+        {
+            RebootTimer += Time.deltaTime;
+            if (RebootTimer > 3f)
+            {
+                Game.Reboot();
+            }
+        }
 
-		if (GameWorld.Player.ReadyToGoToNextRoom)
-		{
-			logicPaused = true;
-			Game.GoToNextLevel();
-		}
+        if (GameWorld.Player.ReadyToGoToNextRoom)
+        {
+            logicPaused = true;
+            Game.GoToNextLevel();
+        }
 
-		if(GameWorld.Player.LoreToTell!=null) {
-			logicPaused=true;
-		}
+        if (GameWorld.Player.LoreToTell != null)
+        {
+            logicPaused = true;
+        }
 
-		if(GameWorld.Player.DialogToTell!=null) {
-			logicPaused=true;
-		}
+        if (GameWorld.Player.DialogToTell != null)
+        {
+            logicPaused = true;
+        }
 
-		if (!logicPaused) GameWorld.Tick(dT);
-		ViewController.HandleViewEvents(GameWorld.ViewEventPipe);
-		ViewController.SyncEverything(dT);
-	}
+        if (GameWorld.Player.MonologToTell != null)
+        {
+            logicPaused = true;
+        }
 
-	float RebootTimer;
+        if (!logicPaused) GameWorld.Tick(dT);
+        ViewController.HandleViewEvents(GameWorld.ViewEventPipe);
+        ViewController.SyncEverything(dT);
+    }
 
-	private void UpdateCameraZoom()
-	{
-		var aspectRatio = Screen.width / (float)Screen.height;
-		var referenceAspectRatio = 16f / 9f;
+    float RebootTimer;
 
-		if (aspectRatio > referenceAspectRatio)
-		{
-			Camera.orthographicSize = DefaultOrtographicSize;
-		}
-		else
-		{
-			Camera.orthographicSize = DefaultOrtographicSize * referenceAspectRatio / aspectRatio;
-		}
-	}
+    private void UpdateCameraZoom()
+    {
+        var aspectRatio = Screen.width / (float)Screen.height;
+        var referenceAspectRatio = 16f / 9f;
 
-	private bool MoveCameraAround(float dT)
+        if (aspectRatio > referenceAspectRatio)
+        {
+            Camera.orthographicSize = DefaultOrtographicSize;
+        }
+        else
+        {
+            Camera.orthographicSize = DefaultOrtographicSize * referenceAspectRatio / aspectRatio;
+        }
+    }
+
+    private bool MoveCameraAround(float dT)
     {
         var cameraPos = Camera.transform.position;
-		var roomPos = GameWorld.Player.Room.Position3D + Vector3.up * 0.3f;
-		var targetPos = new Vector3(roomPos.x, roomPos.y, cameraPos.z);
+        var roomPos = GameWorld.Player.Room.Position3D + Vector3.up * 0.3f;
+        var targetPos = new Vector3(roomPos.x, roomPos.y, cameraPos.z);
 
-		var dist = Vector3.Distance(targetPos, cameraPos);
-		if (dist <= 0.01f) return false;
+        var dist = Vector3.Distance(targetPos, cameraPos);
+        if (dist <= 0.01f) return false;
 
-		Camera.transform.position = Vector3.MoveTowards(cameraPos, targetPos, 40 * dT);
-		return true;
+        Camera.transform.position = Vector3.MoveTowards(cameraPos, targetPos, 40 * dT);
+        return true;
     }
 }

@@ -21,6 +21,18 @@ public class DialogController : MonoBehaviour
                 Game.Player.DialogToTell = null;
             }
         }
+
+        if (Game.Player.MonologToTell != null)
+        {
+            Panel.SetActive(true);
+            DialogText.text = Game.Player.MonologToTell;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Panel.SetActive(false);
+                Game.Player.MonologToTell = null;
+            }
+        }
     }
 
 }
