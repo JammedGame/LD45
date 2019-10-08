@@ -11,6 +11,8 @@ public class UIScene : MonoBehaviour
     public Image DamageUpgrade;
     public Image HealthUpgrade;
     public Image SpeedUpgrade;
+    public Image HelpIndicator;
+    public Image HelpPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +30,7 @@ public class UIScene : MonoBehaviour
         this.DamageText.text = (Game.Player.SkillDamage).ToString();
         this.HealthText.text = (Game.Player.SkillHealth).ToString();
         this.SpeedText.text = (Game.Player.SkillSpeed).ToString();
+        this.HelpIndicator.gameObject.SetActive(!Input.GetKey(KeyCode.H));
+        this.HelpPanel.gameObject.SetActive(Input.GetKey(KeyCode.H));
     }
 }
