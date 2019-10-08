@@ -19,3 +19,8 @@ MonoBehaviour:
   IsStatic: 1
   Density: 1
   Item: Heart
+  DialogToTell: "His inhuman nature notwithstanding, the master was still a man made
+    from flesh and blood. The curse cannot be lifted lest he retake his heart. Norius
+    became its guardian, taking great satisfaction knowing that he would play an
+    integral part in his former superior\u2019s suffering.\r\n\r\nNow that is what
+    I call holding a grudge...\r\n"

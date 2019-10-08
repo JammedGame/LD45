@@ -23,6 +23,8 @@ public class Altar : BattleObject
             if(AltarSettings.Item == "Lungs") player.MovementSpeedBonus += 3;
             if(AltarSettings.Item == "Liver") player.DamageBonus += 3;
             if(AltarSettings.Item == "Eyes") player.HasEyes = true;
+            player.DialogToTell = AltarSettings.DialogToTell;
 		}
+        
 	}
 }

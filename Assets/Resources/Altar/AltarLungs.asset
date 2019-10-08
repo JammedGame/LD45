@@ -19,3 +19,7 @@ MonoBehaviour:
   IsStatic: 1
   Density: 1
   Item: Lungs
+  DialogToTell: 'The fallen master moved with such uncanny speed and grace, fueled
+    by the potent magic coursing through his veins. So thorough was his work, that
+    even his lungs have been augmented. Even removed from his mummified corpse, the
+    mighty organ has retained its power.  '

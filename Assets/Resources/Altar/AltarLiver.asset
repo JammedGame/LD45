@@ -19,3 +19,7 @@ MonoBehaviour:
   IsStatic: 1
   Density: 1
   Item: Liver
+  DialogToTell: "The only thing surpassing Master\u2019s skills was his unsoothing
+    rage. Even when his body gave out, the anger persevered, encased within the remains
+    of his liver. His former acolytes preserved the malformed thing, taking great
+    enjoyment in the dark aura originating from it."

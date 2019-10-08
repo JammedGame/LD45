@@ -16,6 +16,8 @@ public class Player : Unit
     public int SkillPoints;
 
     public string LoreToTell;
+    public string DialogToTell;
+    public string MonologToTell;
 
     public Player(PlayerSettings settings, Room initialRoom, float2 initialPosition) : base(initialRoom, settings.Health, settings, OwnerId.Player, initialPosition)
     {

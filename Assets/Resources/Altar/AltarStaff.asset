@@ -19,3 +19,18 @@ MonoBehaviour:
   IsStatic: 1
   Density: 1
   Item: Staff
+  DialogToTell: 'Damnation!
+
+    
+
+    *A pen may be mightier than the sword, but
+    the staff reigns supreme!
+
+    
+
+    To Warrior a sword, to Ranger a bow, to
+    Wizard a staff. Three legendary artifacts stand amongst many. Timeless weapons
+    guarded by immortal guardians. Only by those instruments shall the guardians
+    be laid to rest.
+
+'
