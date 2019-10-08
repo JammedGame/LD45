@@ -53,12 +53,20 @@ public static class Game
 	public static void GoToNextLevel()
 	{
 		GameState.Level++;
-		GameState.SkillPoints = Player.SkillPoints;
-		GameState.BonusDamage = Player.DamageBonus;
-		GameState.BonusHealth = Player.HealthBonus;
-		GameState.BonusSpeed = Player.MovementSpeedBonus;
-		GameState.HasEyes = Player.HasEyes;
-		SceneManager.LoadScene("Game");
+		if(GameState.Level > 3)
+		{
+			GameState.Reset();
+			SceneManager.LoadScene("Game");
+		}
+		else
+		{
+			GameState.SkillPoints = Player.SkillPoints;
+			GameState.BonusDamage = Player.DamageBonus;
+			GameState.BonusHealth = Player.HealthBonus;
+			GameState.BonusSpeed = Player.MovementSpeedBonus;
+			GameState.HasEyes = Player.HasEyes;
+			SceneManager.LoadScene("Game");
+		}
 	}
 
 	// reset state on enter play mode
