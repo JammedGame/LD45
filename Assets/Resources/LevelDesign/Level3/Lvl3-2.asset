@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: Lvl3-2
   m_EditorClassIdentifier: 
   PotCount: 2
+  DisableTorches: 0
   FirstWaveGolems: 0
   FirstWaveEyes: 3
   SecondWaveGolems: 0
   SecondWaveEyes: 0
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
-  StuffInRoom: []
+  StuffInRoom:
+  - ObjectType: {fileID: 11400000, guid: df31b7b0ad2cf264682f09d05e91503e, type: 2}
+    Position:
+      x: 0
+      y: 0
+    Procbability: 0

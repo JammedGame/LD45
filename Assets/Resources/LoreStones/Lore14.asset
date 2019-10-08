@@ -19,6 +19,7 @@ MonoBehaviour:
   IsStatic: 1
   Density: 1
   Lore: "These catacombs are strongly built and guarded, a worthy prison to contain
-    the cursed master.  Yet, a hidden exi\u2026\u2026\u2026..\r\n\r\nOf all the panels
-    narrating this pointless tale, this is the one that had to be damaged!\r"
+    the cursed master.  Yet, a hidden exi\u2026\u2026\u2026..\r\n\r\n[ Of all the
+    panels narrating this pointless tale, this is the one that had to be damaged!
+    \r]"
   isRead: 0
