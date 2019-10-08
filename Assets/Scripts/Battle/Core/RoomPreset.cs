@@ -19,6 +19,8 @@ public class RoomPreset : ScriptableObject
 
 	// fixed stuff
 	[Table] public List<ObjectInRoomData> StuffInRoom;
+	
+	[TextArea] public string MonologToTell;
 
 	public void SpawnStuffIntoRooms(Room room)
 	{

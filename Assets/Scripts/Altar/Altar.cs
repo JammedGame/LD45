@@ -10,7 +10,6 @@ public class Altar : BattleObject
 
     public Altar(Room room, AltarSettings settings, float2 position) : base(room, settings, OwnerId.Neutral, position)
     {
-        Debug.Log(settings.Item);
         AltarSettings = settings;
     }
 

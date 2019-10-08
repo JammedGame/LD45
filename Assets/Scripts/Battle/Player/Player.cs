@@ -27,6 +27,7 @@ public class Player : Unit
         this.HasEyes = Game.GameState.HasEyes;
         PlayerSettings = settings;
         SkillPoints = Game.GameState.SkillPoints;
+        this.MonologToTell = initialRoom.RoomData.MonologToTell;
     }
     public float TotalDamage => PlayerSettings.Damage + DamageBonus * 0.4f;
     public float TotalHealth => PlayerSettings.Health + HealthBonus * 3;
@@ -92,6 +93,9 @@ public class Player : Unit
                     Room = Room.NextRoom;
                     Velocity = 0;
                     Position = Room.EntryPosition * 0.9f;
+                    if(!string.IsNullOrEmpty(Room.RoomData.MonologToTell)) {
+                        MonologToTell = Room.RoomData.MonologToTell;
+                    }
                 }
             }
             else if (Room.PreviousRoom != null

@@ -8,6 +8,8 @@ public class DialogController : MonoBehaviour
     public GameObject Panel;
     public Text DialogText;
 
+    public Image Portrait;
+
     public void Update()
     {
         if (Game.Player.DialogToTell != null)
@@ -24,11 +26,13 @@ public class DialogController : MonoBehaviour
 
         if (Game.Player.MonologToTell != null)
         {
+            Portrait.gameObject.SetActive(true);
             Panel.SetActive(true);
             DialogText.text = Game.Player.MonologToTell;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Portrait.gameObject.SetActive(false);
                 Panel.SetActive(false);
                 Game.Player.MonologToTell = null;
             }
