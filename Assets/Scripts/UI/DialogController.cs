@@ -20,12 +20,7 @@ public class DialogController : MonoBehaviour
                 Panel.SetActive(false);
                 Game.Player.DialogToTell = null;
             }
-            Invoke("HidePanel", 25f);
         }
     }
 
-    private void HidePanel(){
-        Panel.SetActive(false);
-        Game.Player.DialogToTell = null;
-    }
 }
