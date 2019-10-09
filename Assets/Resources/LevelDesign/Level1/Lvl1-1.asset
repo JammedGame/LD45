@@ -21,3 +21,7 @@ MonoBehaviour:
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
   StuffInRoom: []
+  MonologToTell: "One would call it inconvenient when the only eye working is your
+    third..\n[ Your eyesight nonexistent, you are forced to rely on your other senses,
+    crawling in desperation, drawn by the faint emanation of power from a (hopefully)
+    nearby source.\r ]"

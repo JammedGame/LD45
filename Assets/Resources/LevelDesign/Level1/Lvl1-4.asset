@@ -21,3 +21,5 @@ MonoBehaviour:
   ThirdWaveGolems: 0
   ThirdWaveEyes: 0
   StuffInRoom: []
+  MonologToTell: Doors in here seem to be locked while golems within the room are
+    alive.

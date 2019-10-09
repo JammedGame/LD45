@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lvl1-5
   m_EditorClassIdentifier: 
   PotCount: 2
+  DisableTorches: 0
   FirstWaveGolems: 3
   FirstWaveEyes: 1
   SecondWaveGolems: 1
@@ -25,3 +26,5 @@ MonoBehaviour:
       x: 0
       y: 0
     Procbability: 0
+  MonologToTell: I sence more enemies then I can observe, perhaps they will reveal
+    themselves in time.

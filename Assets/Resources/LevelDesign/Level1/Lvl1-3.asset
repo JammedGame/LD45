@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lvl1-3
   m_EditorClassIdentifier: 
   PotCount: 1
+  DisableTorches: 0
   FirstWaveGolems: 1
   FirstWaveEyes: 0
   SecondWaveGolems: 0
@@ -25,3 +26,4 @@ MonoBehaviour:
       x: 0
       y: 0
     Procbability: 0
+  MonologToTell: My Staff! I'm going to need it to destroy that wretched thing.

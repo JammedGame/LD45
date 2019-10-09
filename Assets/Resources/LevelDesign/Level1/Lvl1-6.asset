@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lvl1-6
   m_EditorClassIdentifier: 
   PotCount: 2
+  DisableTorches: 0
   FirstWaveGolems: 3
   FirstWaveEyes: 0
   SecondWaveGolems: 0
@@ -25,3 +26,5 @@ MonoBehaviour:
       x: 0
       y: 0
     Procbability: 0
+  MonologToTell: There is another one of those stones, I should probably check what's
+    written on it.

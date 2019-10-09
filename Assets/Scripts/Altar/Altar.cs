@@ -30,7 +30,10 @@ public class Altar : BattleObject
                 player.GearState--;
                 player.HasEyes = true;
             }
-            player.DialogToTell = AltarSettings.DialogToTell;
+            if(AltarSettings.DialogToTell.Length > 0)
+            {
+                player.DialogToTell = AltarSettings.DialogToTell;
+            }
 		}
         
 	}
