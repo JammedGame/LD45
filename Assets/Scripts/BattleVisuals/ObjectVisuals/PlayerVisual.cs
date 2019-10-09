@@ -13,7 +13,11 @@ public class PlayerVisual : BattleObject3D
         base.Sync(dT);
 
         var player = (Player)Data;
+        
+        Debug.Log(player.GearState);
+        Animator.SetInteger("GearState", player.GearState);
         Animator.SetInteger("ActionType", (int)player.CurrentAnimation);
+        
 
         var targetLightScale = player.HasEyes ? Vector3.one : NoEyesLightScale * Vector3.one;
         var targetLightIntensity = player.HasEyes ? 1 : NoEyesLightIntensity;
@@ -25,6 +29,7 @@ public class PlayerVisual : BattleObject3D
     public override void Init(BattleObject data)
     {
         var player = (Player)Data;
+        Animator.SetInteger("GearState", player.GearState);
         Light2D.transform.localScale = player.HasEyes ? Vector3.one : NoEyesLightScale * Vector3.one;
         Light2D.intensity = player.HasEyes ? 1 : NoEyesLightIntensity;
     }
