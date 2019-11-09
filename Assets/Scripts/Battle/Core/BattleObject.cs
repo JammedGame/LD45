@@ -63,7 +63,7 @@ public abstract class BattleObject
 	public GameWorld Level => room.World;
 
 	/// <summary>
-	/// 
+	///
 	/// </summary>
 	public bool WasPartOfTheRoom;
 
@@ -194,7 +194,7 @@ public abstract class BattleObject
 		Push(normalizesafe(Position - source), intensity);
 	}
 
-	public float2 RandomDirection => room.World.RandomDirection;
+	public float2 RandomDirection => room.World.RandomGenerator.NextFloat2Direction();
 
 	#endregion
 
@@ -277,11 +277,4 @@ public enum OwnerId
 	Player = 0,
 	Enemy = 1,
 	Neutral = 2
-}
-
-public enum CollisionType
-{
-	NoCollision = 0,
-	HitDetectionOnly = 1,
-	Radius = 2,
 }

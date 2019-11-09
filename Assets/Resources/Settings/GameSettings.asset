@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc55fd679b3cbae40a04bafed78d4db0, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  RoomWidth: 18
-  RoomHeight: 7.75
-  RoomWidthPadding: 2
-  RoomHeightPadding: 5
+  RoomWidth: 36
+  RoomHeight: 15.5
+  CameraOrtographicSize: 11
+  RoomWidthPadding: 4
+  RoomHeightPadding: 10

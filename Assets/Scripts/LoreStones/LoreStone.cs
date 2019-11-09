@@ -21,7 +21,6 @@ public class LoreStone : BattleObject
         base.OnAct(dT);
 
         Delay -= dT;
-        Debug.Log(1);
         if(Delay > 0) return;
         if (DistanceToPlayer < 1)
         {

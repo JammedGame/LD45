@@ -19,7 +19,6 @@ public class GameTicker : MonoBehaviour
         var gameWorld = new GameWorld(levelData);
         var newTicker = new GameObject("GameWorldTicker").AddComponent<GameTicker>();
         newTicker.Camera = Camera.main;
-        newTicker.DefaultOrtographicSize = newTicker.Camera.orthographicSize;
         newTicker.GameWorld = gameWorld;
         newTicker.ViewController = new BattleViewController();
         newTicker.RoomController = new Room3DController(gameWorld);
@@ -56,7 +55,7 @@ public class GameTicker : MonoBehaviour
         }
 
         if (GameWorld.Player.ReadyToGoToNextRoom)
-        {	
+        {
             logicPaused = true;
             Game.GoToNextLevel();
         }
@@ -90,11 +89,11 @@ public class GameTicker : MonoBehaviour
 
         if (aspectRatio > referenceAspectRatio)
         {
-            Camera.orthographicSize = DefaultOrtographicSize;
+            Camera.orthographicSize = GameSettings.Instance.CameraOrtographicSize;
         }
         else
         {
-            Camera.orthographicSize = DefaultOrtographicSize * referenceAspectRatio / aspectRatio;
+            Camera.orthographicSize = GameSettings.Instance.CameraOrtographicSize * referenceAspectRatio / aspectRatio;
         }
     }
 
